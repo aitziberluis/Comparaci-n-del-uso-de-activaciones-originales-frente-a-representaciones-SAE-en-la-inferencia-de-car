@@ -1,0 +1,52 @@
+[
+  {
+    "key": "sex|0|9068",
+    "name": "Words referring to women and females",
+    "description": "Fires on tokens naming women or females (women, woman, female, transwomen), including the repeated noun in 'transwomen are women'."
+  },
+  {
+    "key": "sex|0|7653",
+    "name": "Figuratively versus literally qualifiers",
+    "description": "Activates on parenthetical or hedging qualifiers contrasting figurative and literal meaning, as in 'Nailed it (figuratively, not literally)'."
+  },
+  {
+    "key": "sex|0|15584",
+    "name": "Browser cache and cookie reset instructions",
+    "description": "Fires on tech-support phrasing about clearing cache, cookies and resetting the browser, alongside German '-ache' words like sprache and cache."
+  },
+  {
+    "key": "sex|0|14541",
+    "name": "Pubic and body hair grooming",
+    "description": "Activates on tokens about shaving, trimming and pubic or body hair (pubes, shave, pubic, hair, trim), plus playful 'pub' wordplay."
+  },
+  {
+    "key": "sex|0|2942",
+    "name": "Gemstones and jewelry references",
+    "description": "Fires on precious-stone and jewelry tokens (gemstone, diamond, gem, ruby, rose, precious), including the name Ruby Rose and remarks about jewelry."
+  },
+  {
+    "key": "sex|1|4026",
+    "name": "Sending explicit photos (dick pics)",
+    "description": "Activates on crude tokens about sending explicit genital photos (dick, pics, send), as in 'Fight dick pics with dick pics'."
+  },
+  {
+    "key": "sex|1|7384",
+    "name": "Hyphenated 'co-' compound words",
+    "description": "Fires on words with the 'co-' prefix (co-worker, co-op, co-star), where the hyphenated compound token drives activation across varied contexts."
+  },
+  {
+    "key": "sex|1|13275",
+    "name": "The verb 'drag' and related forms",
+    "description": "Activates on the verb 'drag' and its inflections (drag, drags), as in 'He will drag him on the plane', alongside 'drag race' tokens."
+  },
+  {
+    "key": "sex|1|12845",
+    "name": "'Too much' time and money phrasing",
+    "description": "Low-signal feature firing on 'too much X' constructions involving money and time, as in 'Too much money Too much time'."
+  },
+  {
+    "key": "sex|1|1756",
+    "name": "Right versus wrong with pronouns",
+    "description": "Fires on correctness judgments paired with subject pronouns (he's right, she's right, you're wrong, correct), as in 'You're wrong, she's right'."
+  }
+]

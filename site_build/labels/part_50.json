@@ -1,0 +1,52 @@
+[
+  {
+    "key": "thinking|1|2405",
+    "name": "Shakespearean \"winter of discontent\" phrasing",
+    "description": "Fires on the literary phrase \"winter of discontent\" and related winter/fury wording echoing the famous opening line."
+  },
+  {
+    "key": "thinking|1|11243",
+    "name": "Remarks about time, speed and efficiency",
+    "description": "Fires on short statements about elapsed time, minutes and seconds, and being faster, quicker or more convenient."
+  },
+  {
+    "key": "thinking|1|14145",
+    "name": "Aphorisms on knowledge versus ignorance",
+    "description": "Fires on maxim-style phrasings pairing knowledge and power with ignorance and bliss, e.g. \"ignorance is bliss\"."
+  },
+  {
+    "key": "thinking|1|10786",
+    "name": "Bureaucratic and German efficiency phrasing",
+    "description": "Fires on references to efficiency, especially of government offices and the trope of German efficiency."
+  },
+  {
+    "key": "perceiving|0|15703",
+    "name": "\"Gotta love\" plus onion or ontology words",
+    "description": "Fires on \"gotta love\" expressions alongside tokens like onion, French dip and ontology, as in praising an ontology debate."
+  },
+  {
+    "key": "perceiving|0|13689",
+    "name": "\"in-\" prefixed words and the game Infamous",
+    "description": "Fires on words beginning with in- (infamous, infographics, infrared, influencer) and on recommendations of the game Infamous."
+  },
+  {
+    "key": "perceiving|0|12340",
+    "name": "Talk of efficiency and inefficiency",
+    "description": "Fires on statements about caring (or not) about efficiency and inefficiency, often with the German-efficiency trope."
+  },
+  {
+    "key": "perceiving|0|2052",
+    "name": "Getting straight to the point",
+    "description": "Fires on phrasing about getting to the point and proceeding directly without preamble."
+  },
+  {
+    "key": "perceiving|0|828",
+    "name": "References to the ENTJ personality type",
+    "description": "Fires on mentions of the MBTI type ENTJ and ENTJs, often with assertive markers like obviously and definitely."
+  },
+  {
+    "key": "perceiving|1|9994",
+    "name": "Giving someone a chance or credit",
+    "description": "Fires on phrases about giving a person or team a chance, a shot, or too much credit or importance."
+  }
+]

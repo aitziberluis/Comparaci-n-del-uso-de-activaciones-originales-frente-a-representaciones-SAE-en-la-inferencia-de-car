@@ -1,4 +1,5 @@
-data/
+# Datos de entrada (grandes, en la raiz). NO afecta a docs/data/ del sitio web.
+/data/
 
 # Python caches
 __pycache__/

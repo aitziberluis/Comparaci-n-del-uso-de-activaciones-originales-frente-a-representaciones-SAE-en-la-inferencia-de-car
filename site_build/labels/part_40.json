@@ -1,0 +1,52 @@
+[
+  {
+    "key": "introverted|1|9724",
+    "name": "Praise for MS Paint and amateur art",
+    "description": "Fires on tokens like \"MS paint\", \"pretty good\", and \"add\" in short complimentary remarks about hand-made or low-fidelity artwork."
+  },
+  {
+    "key": "intuitive|0|9092",
+    "name": "Online retail product and price links",
+    "description": "Activates on shopping-site vocabulary (Amazon, Newegg, eBay, item, product, price) within comments linking to listings and discussing stock or pricing."
+  },
+  {
+    "key": "intuitive|0|10867",
+    "name": "Workplace encounters with difficult people",
+    "description": "Fires on first-person narratives about handling strangers, callers, or customers at work, with tokens like \"can't\", \"call\", \"stranger\", and \"respect\"."
+  },
+  {
+    "key": "intuitive|0|9316",
+    "name": "Phonetic wordplay on -istern/-istp sounds",
+    "description": "Activates on rhyming near-homophone puns (cistern, sistern, ISTP, Sisqo) clustered in short punning sentences."
+  },
+  {
+    "key": "intuitive|0|13234",
+    "name": "Emphatic 'every single one' constructions",
+    "description": "Fires on the intensifier phrase \"every single one/thing\" and \"each and every\", often in sweeping statements of liking, hating, or disdain."
+  },
+  {
+    "key": "intuitive|0|2824",
+    "name": "Amazon links with crude or joke products",
+    "description": "Activates on Amazon URL fragments (ref, UTF8, dp) paired with risque or meme product references such as sex chairs or 'red pill'."
+  },
+  {
+    "key": "intuitive|1|326",
+    "name": "MBTI intuitive type abbreviations",
+    "description": "Fires on intuitive-type codes (INTP, INxx) and the 'In-the-dark Brotherhood' wordplay riffing on Elder Scrolls naming."
+  },
+  {
+    "key": "intuitive|1|1718",
+    "name": "Stock photo and article image links",
+    "description": "Activates on stock-image URL fragments (shutterstock, display_pic_with_logo, jpg) and news-article links embedded in comments."
+  },
+  {
+    "key": "intuitive|1|4998",
+    "name": "Creative writing and self-made art",
+    "description": "Fires on first-person statements about writing books, songs, poems, raps, or stories, with tokens like \"write\", \"own\", \"book\", and \"poems\"."
+  },
+  {
+    "key": "intuitive|1|737",
+    "name": "Connecting and connection to devices/wifi",
+    "description": "Activates on the words \"connect\", \"connection\", and \"wifi\" in short remarks about network or device connectivity."
+  }
+]

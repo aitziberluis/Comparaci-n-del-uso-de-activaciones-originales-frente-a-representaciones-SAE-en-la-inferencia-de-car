@@ -1,0 +1,52 @@
+[
+  {
+    "key": "introverted|0|15609",
+    "name": "Repeated MBTI type code ENFP",
+    "description": "Fires on the four-letter Myers-Briggs type label ENFP, especially when chanted or repeated, plus ENTP and second-person 'you're'."
+  },
+  {
+    "key": "introverted|0|828",
+    "name": "ENTJ Myers-Briggs type mentions",
+    "description": "Activates on the MBTI type code ENTJ (and ESFP), often in profanity-laced exclamations about the type, e.g. 'Where the FUCK is ENTJ'."
+  },
+  {
+    "key": "introverted|0|2937",
+    "name": "Negating un- prefix and unfalsifiable claims",
+    "description": "Fires on words with the negating 'un-' prefix such as unfalsifiable, uncivilized, uncivil, often in statements that a claim or hypothesis cannot be tested."
+  },
+  {
+    "key": "introverted|0|6334",
+    "name": "Chanted MBTI codes ENFP and ENTP",
+    "description": "Activates on long repeated strings of the Myers-Briggs type abbreviations ENFP and ENTP, plus hedging words like maybe and sounds."
+  },
+  {
+    "key": "introverted|0|15461",
+    "name": "Cricket and rugby player commentary",
+    "description": "Fires on sports talk about cricket bowlers and rugby league players, e.g. Origin players, pace bowlers, Pro Bowler, with names like Pearce and Starc."
+  },
+  {
+    "key": "introverted|1|8044",
+    "name": "Staring and stares to death",
+    "description": "Activates on the verb stare and its inflections (staring, stared), often in hyperbolic phrasing about staring at walls, across rooms, or staring to death."
+  },
+  {
+    "key": "introverted|1|8040",
+    "name": "Enumerated a) b) option lists",
+    "description": "Fires on inline enumerations marked with parenthesized letters 'a)' and 'b)' laying out two or more listed options or reasons."
+  },
+  {
+    "key": "introverted|1|6235",
+    "name": "Independent and independently",
+    "description": "Activates on the word independent and related forms (independently, financially independent), as in independent city or independent endeavor."
+  },
+  {
+    "key": "introverted|1|1525",
+    "name": "Crude filling and bodily-fluid slang",
+    "description": "Fires on coarse sexual or scatological slang about filling, with tokens like fill, filled, cum, and shit; pattern is vulgar wordplay."
+  },
+  {
+    "key": "introverted|1|9724",
+    "name": "Praise for MS Paint artwork",
+    "description": "Activates on casual approval phrasing such as 'pretty good for MS paint', referencing the MS Paint program and image edits."
+  }
+]

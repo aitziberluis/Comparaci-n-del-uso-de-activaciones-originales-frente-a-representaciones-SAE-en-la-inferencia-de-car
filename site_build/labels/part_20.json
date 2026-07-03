@@ -1,0 +1,52 @@
+[
+  {
+    "key": "age|1|15727",
+    "name": "mixed or low-signal feature",
+    "description": "Tokens and example comments share no coherent theme, spanning brand names, prison-drama references, hardware, and unrelated anecdotes."
+  },
+  {
+    "key": "age|2|15812",
+    "name": "going back far enough in time or family",
+    "description": "Activates on reflective passages about tracing things back far in time, shared ancestry, or stepping back from family over long spans."
+  },
+  {
+    "key": "age|2|15797",
+    "name": "embedded Tumblr image links",
+    "description": "Fires on comments containing Tumblr media image URLs (media.tumblr.com .jpg links) attached to short captions."
+  },
+  {
+    "key": "age|2|10824",
+    "name": "mixed or low-signal feature",
+    "description": "Tokens and examples have no shared theme, mixing weekly grocery spending, a band fact, a religion link, and a soccer match report."
+  },
+  {
+    "key": "age|2|10999",
+    "name": "support systems, exes and relationships",
+    "description": "Activates on first-person narration about leaning on a support system, handling past relationships and exes, with occasional gear references."
+  },
+  {
+    "key": "age|2|5566",
+    "name": "the word \"compound\": lifts, butters, sentences",
+    "description": "Fires on uses of \"compound\" across contexts: compound lifts, compound butters, and compound nouns or sentences."
+  },
+  {
+    "key": "age|3|10334",
+    "name": "long reflective essays on personal experience",
+    "description": "Activates on long, discursive first-person passages reflecting on reading aloud, the elderly, weaning, religion, and decades of memory."
+  },
+  {
+    "key": "age|3|8613",
+    "name": "comments linking to blogs and articles",
+    "description": "Fires on comments that embed external blog or article hyperlinks, frequently WordPress, tor.com, and news domains."
+  },
+  {
+    "key": "age|3|925",
+    "name": "recommending a reference handbook or guide",
+    "description": "Activates on text suggesting a published handbook or guide as a resource, such as a graphic artist's pricing and ethics guidelines."
+  },
+  {
+    "key": "age|3|11446",
+    "name": "ambivalence about having children",
+    "description": "Fires on discussion of parenting and the number of kids, framed around feeling ambivalent or unenthusiastic about being a parent."
+  }
+]

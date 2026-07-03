@@ -32,6 +32,18 @@ Estructura y carpetas
 - `modelos/` - resultados de clasificadores.
 - `sae-ckpts/` - checkpoints SAE.
 - `wandb/` - artefactos de seguimiento opcional.
+- `docs/` - sitio web estatico (GitHub Pages) que explora las features SAE mas relevantes por caracteristica. Ver `docs/README.md`.
+- `site_build/` - pipeline que genera los datos del sitio a partir de `modelos/*_sae_interpretabilidad/`. Ver `site_build/README.md`.
+
+Sitio web (GitHub Pages)
+------------------------
+
+`docs/` contiene un dashboard interactivo: una pestaña por caracteristica (sexo, edad y
+las 4 dimensiones MBTI) que muestra las 5 features SAE mas influyentes del clasificador
+lineal por cada clase, con nombre y descripcion, y los comentarios donde mas se activan
+(con los tokens resaltados). Para publicarlo: Settings → Pages → Deploy from a branch →
+`main` / carpeta `/docs`. Para regenerar los datos: `python3 site_build/build_site_data.py`
+y `python3 site_build/merge_labels.py` (detalles en `site_build/README.md`).
 
 Datos esperados
 ---------------

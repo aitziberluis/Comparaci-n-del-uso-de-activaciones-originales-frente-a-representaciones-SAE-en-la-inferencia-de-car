@@ -1,0 +1,3430 @@
+{
+  "generated_by": "site_build/build_site_data.py",
+  "title": "SAE feature browser — inferring author traits from comments",
+  "models": {
+    "Qwen3-4B": {
+      "name": "Qwen3-4B-Base",
+      "hookpoint": "model.layers.25",
+      "layer": 25,
+      "d_in": 2560,
+      "num_latents": 16384,
+      "k": 64
+    },
+    "GPT-2": {
+      "name": "GPT-2 (openai-community/gpt2)",
+      "hookpoint": "transformer.h.8",
+      "layer": 8,
+      "d_in": 768,
+      "num_latents": 16384,
+      "k": 64
+    }
+  },
+  "characteristics": [
+    {
+      "id": "sex",
+      "label": "Sex",
+      "short": "Sex",
+      "icon": "venus-mars",
+      "question": "Is the author female or male?",
+      "model": "GPT-2",
+      "model_info": {
+        "name": "GPT-2 (openai-community/gpt2)",
+        "hookpoint": "transformer.h.8",
+        "layer": 8,
+        "d_in": 768,
+        "num_latents": 16384,
+        "k": 64
+      },
+      "task_name": "genero",
+      "pooling": "mean_of_mean",
+      "num_latents": 16384,
+      "num_users_train": 2158,
+      "num_users_eval": 463,
+      "num_comments_train": 5264573,
+      "metrics": {
+        "accuracy": 0.8855,
+        "balanced_accuracy": 0.8855,
+        "f1_macro": 0.8847
+      },
+      "poles": [
+        {
+          "class_index": 0,
+          "class_name": "female",
+          "label": "Female",
+          "tag": "Female",
+          "tone": "pink",
+          "features": [
+            {
+              "latent_id": 9068,
+              "score": 453.12,
+              "coefficient": -453.12,
+              "top_words": [
+                "women",
+                "woman",
+                "high",
+                "value",
+                "female",
+                "mean",
+                "transwomen",
+                "turkish",
+                "either"
+              ],
+              "highlight": [
+                "women",
+                "woman",
+                "high",
+                "value",
+                "female",
+                "mean",
+                "transwomen",
+                "turkish",
+                "either"
+              ],
+              "examples": [
+                {
+                  "activation": 7.941,
+                  "text": "You mean the \"transwomen are women\" women?"
+                }
+              ],
+              "name": "Words referring to women and females",
+              "description": "Fires on tokens naming women or females (women, woman, female, transwomen), including the repeated noun in 'transwomen are women'."
+            },
+            {
+              "latent_id": 7653,
+              "score": 427.99,
+              "coefficient": -427.99,
+              "top_words": [
+                "problem",
+                "figures",
+                "nailed",
+                "figuratively",
+                "literally",
+                "someone",
+                "tag",
+                "roger"
+              ],
+              "highlight": [
+                "problem",
+                "figures",
+                "nailed",
+                "figuratively",
+                "literally",
+                "someone",
+                "tag",
+                "roger"
+              ],
+              "examples": [
+                {
+                  "activation": 2.424,
+                  "text": "Nailed it(figuratively, not literally)"
+                }
+              ],
+              "name": "Figuratively versus literally qualifiers",
+              "description": "Activates on parenthetical or hedging qualifiers contrasting figurative and literal meaning, as in 'Nailed it (figuratively, not literally)'."
+            },
+            {
+              "latent_id": 15584,
+              "score": 423.94,
+              "coefficient": -423.94,
+              "top_words": [
+                "sprache",
+                "stache",
+                "deutsche",
+                "schwere",
+                "clear",
+                "cache",
+                "cookies",
+                "reset",
+                "browser",
+                "solid"
+              ],
+              "highlight": [
+                "sprache",
+                "stache",
+                "deutsche",
+                "schwere",
+                "clear",
+                "cache",
+                "cookies",
+                "reset",
+                "browser",
+                "solid"
+              ],
+              "examples": [
+                {
+                  "activation": 2.383,
+                  "text": "Clear cache and cookies, reset browser."
+                }
+              ],
+              "name": "Browser cache and cookie reset instructions",
+              "description": "Fires on tech-support phrasing about clearing cache, cookies and resetting the browser, alongside German '-ache' words like sprache and cache."
+            },
+            {
+              "latent_id": 14541,
+              "score": 411.87,
+              "coefficient": -411.87,
+              "top_words": [
+                "pubes",
+                "string",
+                "sure",
+                "ginger",
+                "trim",
+                "dude",
+                "shave",
+                "pubic",
+                "hair",
+                "considered"
+              ],
+              "highlight": [
+                "pubes",
+                "string",
+                "sure",
+                "ginger",
+                "trim",
+                "dude",
+                "shave",
+                "pubic",
+                "hair",
+                "considered"
+              ],
+              "examples": [
+                {
+                  "activation": 5.57,
+                  "text": "Do you shave your pubic hair?"
+                },
+                {
+                  "activation": 5.277,
+                  "text": "Have you considered self-publishing?"
+                },
+                {
+                  "activation": 4.773,
+                  "text": "you can also call them pubby wubbies"
+                },
+                {
+                  "activation": 4.07,
+                  "text": "String? Are we sure this is not pubes?"
+                },
+                {
+                  "activation": 3.84,
+                  "text": "Lucky's Pub in Pasadena, enjoy!"
+                }
+              ],
+              "name": "Pubic and body hair grooming",
+              "description": "Activates on tokens about shaving, trimming and pubic or body hair (pubes, shave, pubic, hair, trim), plus playful 'pub' wordplay."
+            },
+            {
+              "latent_id": 2942,
+              "score": 403.73,
+              "coefficient": -403.73,
+              "top_words": [
+                "precious",
+                "favorite",
+                "gemstone",
+                "second",
+                "diamond",
+                "gem",
+                "that's",
+                "ruby",
+                "rose",
+                "sideline"
+              ],
+              "highlight": [
+                "precious",
+                "favorite",
+                "gemstone",
+                "second",
+                "diamond",
+                "gem",
+                "that's",
+                "ruby",
+                "rose",
+                "sideline"
+              ],
+              "examples": [
+                {
+                  "activation": 3.963,
+                  "text": "Is that Ruby Rose on the sideline?"
+                },
+                {
+                  "activation": 3.801,
+                  "text": "Oh my god that jewelery is amazing"
+                }
+              ],
+              "name": "Gemstones and jewelry references",
+              "description": "Fires on precious-stone and jewelry tokens (gemstone, diamond, gem, ruby, rose, precious), including the name Ruby Rose and remarks about jewelry."
+            }
+          ]
+        },
+        {
+          "class_index": 1,
+          "class_name": "male",
+          "label": "Male",
+          "tag": "Male",
+          "tone": "blue",
+          "features": [
+            {
+              "latent_id": 4026,
+              "score": 424.95,
+              "coefficient": 424.95,
+              "top_words": [
+                "dick",
+                "pics",
+                "small",
+                "need",
+                "dickbutt",
+                "fight",
+                "send"
+              ],
+              "highlight": [
+                "dick",
+                "pics",
+                "small",
+                "need",
+                "dickbutt",
+                "fight",
+                "send"
+              ],
+              "examples": [
+                {
+                  "activation": 10.961,
+                  "text": "Fight dick pics with dick pics"
+                }
+              ],
+              "name": "Sending explicit photos (dick pics)",
+              "description": "Activates on crude tokens about sending explicit genital photos (dick, pics, send), as in 'Fight dick pics with dick pics'."
+            },
+            {
+              "latent_id": 7384,
+              "score": 406.17,
+              "coefficient": 406.17,
+              "top_words": [
+                "workers",
+                "dependent",
+                "impress",
+                "new",
+                "worker",
+                "nope",
+                "enraged",
+                "campaign",
+                "online",
+                "til"
+              ],
+              "highlight": [
+                "workers",
+                "dependent",
+                "impress",
+                "new",
+                "worker",
+                "nope",
+                "enraged",
+                "campaign",
+                "online",
+                "til"
+              ],
+              "examples": [
+                {
+                  "activation": 8.336,
+                  "text": "How to impress your new co-worker"
+                },
+                {
+                  "activation": 7.719,
+                  "text": "Are your co-workers all 50?"
+                },
+                {
+                  "activation": 7.68,
+                  "text": "Nope, co-workers have enraged."
+                },
+                {
+                  "activation": 7.34,
+                  "text": "Does the campaign have online co-op?"
+                },
+                {
+                  "activation": 7.207,
+                  "text": "TIL that the game has co-op."
+                },
+                {
+                  "activation": 6.824,
+                  "text": "Currently the co-star of Doctor Who."
+                }
+              ],
+              "name": "Hyphenated 'co-' compound words",
+              "description": "Fires on words with the 'co-' prefix (co-worker, co-op, co-star), where the hyphenated compound token drives activation across varied contexts."
+            },
+            {
+              "latent_id": 13275,
+              "score": 398.08,
+              "coefficient": 398.08,
+              "top_words": [
+                "drag",
+                "race",
+                "saved",
+                "ahs",
+                "powerful",
+                "desmond",
+                "drags",
+                "unexpected",
+                "tim",
+                "allen"
+              ],
+              "highlight": [
+                "drag",
+                "race",
+                "saved",
+                "ahs",
+                "powerful",
+                "desmond",
+                "drags",
+                "unexpected",
+                "tim",
+                "allen"
+              ],
+              "examples": [
+                {
+                  "activation": 7.695,
+                  "text": "He will drag him on the plane."
+                }
+              ],
+              "name": "The verb 'drag' and related forms",
+              "description": "Activates on the verb 'drag' and its inflections (drag, drags), as in 'He will drag him on the plane', alongside 'drag race' tokens."
+            },
+            {
+              "latent_id": 12845,
+              "score": 383.96,
+              "coefficient": 383.96,
+              "top_words": [
+                "still",
+                "way",
+                "far",
+                "lol",
+                "moneytoo",
+                "time"
+              ],
+              "highlight": [
+                "still",
+                "way",
+                "far",
+                "lol",
+                "moneytoo",
+                "time"
+              ],
+              "examples": [
+                {
+                  "activation": 6.203,
+                  "text": "Too much moneyToo much time"
+                }
+              ],
+              "name": "'Too much' time and money phrasing",
+              "description": "Low-signal feature firing on 'too much X' constructions involving money and time, as in 'Too much money Too much time'."
+            },
+            {
+              "latent_id": 1756,
+              "score": 373.03,
+              "coefficient": 373.03,
+              "top_words": [
+                "he's",
+                "right",
+                "wrong",
+                "correct",
+                "you're",
+                "she's"
+              ],
+              "highlight": [
+                "he's",
+                "right",
+                "wrong",
+                "correct",
+                "you're",
+                "she's"
+              ],
+              "examples": [
+                {
+                  "activation": 6.809,
+                  "text": "You're wrong, she's right"
+                }
+              ],
+              "name": "Right versus wrong with pronouns",
+              "description": "Fires on correctness judgments paired with subject pronouns (he's right, she's right, you're wrong, correct), as in 'You're wrong, she's right'."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "age",
+      "label": "Age",
+      "short": "Age",
+      "icon": "calendar",
+      "question": "Which age band does the author belong to?",
+      "model": "Qwen3-4B",
+      "model_info": {
+        "name": "Qwen3-4B-Base",
+        "hookpoint": "model.layers.25",
+        "layer": 25,
+        "d_in": 2560,
+        "num_latents": 16384,
+        "k": 64
+      },
+      "task_name": "edad_qwen",
+      "pooling": "mean_of_mean",
+      "num_latents": 16384,
+      "num_users_train": 1626,
+      "num_users_eval": 349,
+      "num_comments_train": 3896989,
+      "metrics": {
+        "accuracy": 0.5473,
+        "balanced_accuracy": 0.4396,
+        "f1_macro": 0.4273
+      },
+      "poles": [
+        {
+          "class_index": 0,
+          "class_name": "14_19",
+          "label": "14 – 19",
+          "tag": "14–19",
+          "tone": "teal",
+          "features": [
+            {
+              "latent_id": 8847,
+              "score": 964.65,
+              "coefficient": 964.65,
+              "top_words": [
+                "half",
+                "senior",
+                "year",
+                "english",
+                "highschool",
+                "junior",
+                "i'm",
+                "don't",
+                "car",
+                "gov't"
+              ],
+              "highlight": [
+                "half",
+                "senior",
+                "year",
+                "english",
+                "highschool",
+                "junior",
+                "i'm",
+                "don't",
+                "car",
+                "gov't"
+              ],
+              "examples": [
+                {
+                  "activation": 9.102,
+                  "text": "Senior Year will have AP English Lang, AP HuG, AP Euro, DE Crim Justice, Forensics, Comp Graphics, Sociology (half yr), Mil History (half yr), and Hist Genocides (half year)."
+                },
+                {
+                  "activation": 9.008,
+                  "text": "Your school does prom this early?"
+                },
+                {
+                  "activation": 8.555,
+                  "text": "I'm 15. I don't own a car."
+                },
+                {
+                  "activation": 8.508,
+                  "text": "I'm 15 and don't have a car."
+                },
+                {
+                  "activation": 8.188,
+                  "text": "* AP English Lit* AP Stat* AP US Gov't* AP Micro* AP Comparative Gov't"
+                },
+                {
+                  "activation": 8.086,
+                  "text": "Senior in HS, I'll be sure to include that"
+                }
+              ],
+              "name": "High-school AP courses and grade levels",
+              "description": "Fires on tokens like senior, junior, highschool, AP English and course listings, plus mentions of school year, prom, and not owning a car."
+            },
+            {
+              "latent_id": 10794,
+              "score": 667.29,
+              "coefficient": 667.29,
+              "top_words": [
+                "class",
+                "don't",
+                "i'm",
+                "pretty",
+                "i've",
+                "for",
+                "writing",
+                "usually",
+                "parents",
+                "bad"
+              ],
+              "highlight": [
+                "class",
+                "don't",
+                "i'm",
+                "pretty",
+                "i've",
+                "for",
+                "writing",
+                "usually",
+                "parents",
+                "bad"
+              ],
+              "examples": [
+                {
+                  "activation": 11.922,
+                  "text": "I'm pretty much a total newbie at it. I took a programming class in high school and learned some Java, HTML and I think C but that was years ago so I don't really remember much of anything from it. Recently, I've been trying to learn for about a week when I've got some spare t..."
+                },
+                {
+                  "activation": 10.805,
+                  "text": "Link? Ive been looking but all of the ones I found are really bad quality :("
+                },
+                {
+                  "activation": 10.555,
+                  "text": "I don't generally don't talk about problems with my friends and they don't generally talk to me about their problems (Unless they're serious, of course). But it's nice to see that other people my age are having problems with certain things (Not that I like the fact that some o..."
+                },
+                {
+                  "activation": 10.211,
+                  "text": "Whenever I'm given a writing assignment for class or something I usually start off writing according to the directions but it usually ends up going in my own direction and depending on the class I either fail miserably or get an A because of it."
+                },
+                {
+                  "activation": 9.836,
+                  "text": "Alien vs. PredatorMy parents brainwashed me so bad that I thought that I would be a murderer after I watched it. My friend's friends and parents forced me to watch it at a birthday/sleep over. I was seriously crying, and then I was like \"wait, this is pretty interesting...\" I'..."
+                }
+              ],
+              "name": "First-person accounts of school and learning",
+              "description": "Fires on first-person contractions (I'm, I've, don't) in long personal narratives about classes, writing assignments, learning skills, and friends."
+            },
+            {
+              "latent_id": 4108,
+              "score": 609.32,
+              "coefficient": 609.32,
+              "top_words": [
+                "school",
+                "scho",
+                "scholes",
+                "somewhat",
+                "mostly",
+                "youtube",
+                "channel",
+                "life"
+              ],
+              "highlight": [
+                "school",
+                "scho",
+                "scholes",
+                "somewhat",
+                "mostly",
+                "youtube",
+                "channel",
+                "life"
+              ],
+              "examples": [
+                {
+                  "activation": 8.539,
+                  "text": "I am somewhat mostly because of that YouTube channel School of Life"
+                }
+              ],
+              "name": "School-related and YouTube channel references",
+              "description": "Fires on the token school (and variants like scho, scholes) together with mentions of YouTube channels and life."
+            },
+            {
+              "latent_id": 13707,
+              "score": 587.39,
+              "coefficient": 587.39,
+              "top_words": [
+                "legal",
+                "you're",
+                "yeah",
+                "it's",
+                "rated",
+                "older",
+                "beer",
+                "age",
+                "consent",
+                "alcohol"
+              ],
+              "highlight": [
+                "legal",
+                "you're",
+                "yeah",
+                "it's",
+                "rated",
+                "older",
+                "beer",
+                "age",
+                "consent",
+                "alcohol"
+              ],
+              "examples": [
+                {
+                  "activation": 16.094,
+                  "text": "'98, M rated games are rated for people 17 and older"
+                },
+                {
+                  "activation": 14.695,
+                  "text": "Actually, no. You must be 21 or older to consume **hard liquor**. Beer is legal at 18."
+                },
+                {
+                  "activation": 11.828,
+                  "text": "Yeah Australia's age of consent is 16."
+                },
+                {
+                  "activation": 10.484,
+                  "text": "Haha, what a convenient coincidence! The legal age here in terms of drinking alcohol in licensed premises and buying alcohol is 18, albeit if you're 16/17 you can have beer/wine/cider if you're accompanied by an adult (alongside a table meal), and 5+ year olds can drink at hom..."
+                },
+                {
+                  "activation": 10.352,
+                  "text": "Yeah. It's legal, you can order the drinks as long as a parent/guardian/spouse consents. However it's considered child neglect to get kids under 18 (might be 16) drunk. But as long as you're over 18 with a parent you can get trashed."
+                },
+                {
+                  "activation": 9.508,
+                  "text": "Marijuana is legal only if you're over 60."
+                },
+                {
+                  "activation": 9.18,
+                  "text": "Yeah I was messing with them, it's illegal to buy tobacco under 18 (21 in my state) in the US."
+                },
+                {
+                  "activation": 8.359,
+                  "text": "In certain states, you can get tattoos under 18 with parental consent."
+                }
+              ],
+              "name": "Legal age limits for alcohol, tobacco, consent",
+              "description": "Fires on legal, age, consent, alcohol, beer, older near statements about minimum ages for drinking, smoking, tattoos, M-rated games, and age of consent."
+            },
+            {
+              "latent_id": 784,
+              "score": 555.41,
+              "coefficient": 555.41,
+              "top_words": [
+                "life",
+                "playing",
+                "video",
+                "game",
+                "romanticises",
+                "deadliest",
+                "conflict",
+                "history",
+                "for",
+                "own"
+              ],
+              "highlight": [
+                "life",
+                "playing",
+                "video",
+                "game",
+                "romanticises",
+                "deadliest",
+                "conflict",
+                "history",
+                "for",
+                "own"
+              ],
+              "examples": [
+                {
+                  "activation": 0.145,
+                  "text": "You are playing a video game which romanticises the deadliest conflict in history for your own entertainment. If you are here to pay respects to those victims, you are in the wrong place."
+                },
+                {
+                  "activation": 0.051,
+                  "text": "Depression if I have to guess. I don’t know much about your life and I’m not a mental health professional but what is your life like? Have you suffered any trauma in your life? Do you exercise and eat healthy? These things may have an influence on your feelings."
+                }
+              ],
+              "name": "Reflective remarks on life, conflict, and entertainment",
+              "description": "Fires on life, playing, video game alongside reflective passages about violent conflict as entertainment and on questions about trauma and mental health."
+            }
+          ]
+        },
+        {
+          "class_index": 1,
+          "class_name": "20_29",
+          "label": "20 – 29",
+          "tag": "20–29",
+          "tone": "green",
+          "features": [
+            {
+              "latent_id": 1739,
+              "score": 688.32,
+              "coefficient": 688.32,
+              "top_words": [
+                "emergency",
+                "crisis",
+                "averted",
+                "induction",
+                "port",
+                "lmao",
+                "idiot",
+                "fees",
+                "management",
+                "boys"
+              ],
+              "highlight": [
+                "emergency",
+                "crisis",
+                "averted",
+                "induction",
+                "port",
+                "lmao",
+                "idiot",
+                "fees",
+                "management",
+                "boys"
+              ],
+              "examples": [
+                {
+                  "activation": 6.645,
+                  "text": "Call the non-emergency police line."
+                },
+                {
+                  "activation": 6.367,
+                  "text": "I'm very interested in emergency and hope to work there after I graduate :)"
+                }
+              ],
+              "name": "Emergency, crisis, and management vocabulary",
+              "description": "Fires on emergency, crisis, averted, management near references to emergency services and graduating to work in an emergency field."
+            },
+            {
+              "latent_id": 12847,
+              "score": 675.99,
+              "coefficient": 675.99,
+              "top_words": [
+                "given",
+                "pretty",
+                "fast",
+                "length",
+                "double",
+                "points",
+                "tentacles",
+                "age",
+                "dada",
+                "chapman"
+              ],
+              "highlight": [
+                "given",
+                "pretty",
+                "fast",
+                "length",
+                "double",
+                "points",
+                "tentacles",
+                "age",
+                "dada",
+                "chapman"
+              ],
+              "examples": [
+                {
+                  "activation": 13.922,
+                  "text": "Pretty fast given the length"
+                },
+                {
+                  "activation": 5.805,
+                  "text": "Chapman if given a full season."
+                },
+                {
+                  "activation": 5.762,
+                  "text": "Not really, given that there is past precedent."
+                }
+              ],
+              "name": "Concessive 'given' clauses",
+              "description": "Fires on the word given used to introduce a concession or qualifier, as in 'given the length' or 'given that there is past precedent'."
+            },
+            {
+              "latent_id": 497,
+              "score": 659.3,
+              "coefficient": 659.3,
+              "top_words": [
+                "maybe",
+                "using",
+                "you're",
+                "i'm",
+                "making",
+                "fun",
+                "for",
+                "soccer",
+                "knowing",
+                "show"
+              ],
+              "highlight": [
+                "maybe",
+                "using",
+                "you're",
+                "i'm",
+                "making",
+                "fun",
+                "for",
+                "soccer",
+                "knowing",
+                "show"
+              ],
+              "examples": [
+                {
+                  "activation": 0.015,
+                  "text": "Maybe I'm making fun of you for using soccer, knowing that you're from the U.K., to show you that maybe, just maybe, what you like and don't like is not only not universal to you, but also to the bubble of people you're surrounded by, considering you keep using your personal e..."
+                }
+              ],
+              "name": "Sarcastic argumentative second-person rebuttals",
+              "description": "Fires on maybe, you're, making fun in long second-person rebuttals that mock an interlocutor's assumptions and personal bubble."
+            },
+            {
+              "latent_id": 6853,
+              "score": 618.39,
+              "coefficient": 618.39,
+              "top_words": [
+                "towards",
+                "end",
+                "display",
+                "outputs",
+                "lower",
+                "power",
+                "homeward",
+                "bound",
+                "probably",
+                "downwards"
+              ],
+              "highlight": [
+                "towards",
+                "end",
+                "display",
+                "outputs",
+                "lower",
+                "power",
+                "homeward",
+                "bound",
+                "probably",
+                "downwards"
+              ],
+              "examples": [
+                {
+                  "activation": 9.555,
+                  "text": "towards the display outputs is lower power."
+                },
+                {
+                  "activation": 7.66,
+                  "text": "It says this in the article, towards the end:"
+                },
+                {
+                  "activation": 7.312,
+                  "text": "THIS THREAD IS STEERED TOWARDS GREATNESS"
+                },
+                {
+                  "activation": 7.086,
+                  "text": "I encountered reform thinking towards the end of my undergraduate."
+                },
+                {
+                  "activation": 6.488,
+                  "text": "He turned into a supermodel towards the end. dat pose"
+                },
+                {
+                  "activation": 6.25,
+                  "text": "I pretty much said as much towards the end of the video."
+                }
+              ],
+              "name": "Directional phrase 'towards the end'",
+              "description": "Fires strongly on the preposition towards, especially in the recurring phrase 'towards the end' and similar directional or trajectory expressions."
+            },
+            {
+              "latent_id": 15727,
+              "score": 581.33,
+              "coefficient": 581.33,
+              "top_words": [
+                "happened",
+                "poor",
+                "able",
+                "poisoned",
+                "head",
+                "shoulders",
+                "bill",
+                "needs",
+                "loosen",
+                "bit"
+              ],
+              "highlight": [
+                "happened",
+                "poor",
+                "able",
+                "poisoned",
+                "head",
+                "shoulders",
+                "bill",
+                "needs",
+                "loosen",
+                "bit"
+              ],
+              "examples": [
+                {
+                  "activation": 0.322,
+                  "text": "Are they able to be poisoned with Head and Shoulders?"
+                },
+                {
+                  "activation": 0.238,
+                  "text": "Bill needs to loosen up a bit if you ask me"
+                },
+                {
+                  "activation": 0.151,
+                  "text": "[Or this.](http://i172.photobucket.com/albums/w19/animeangel73/ariel.gif)"
+                },
+                {
+                  "activation": 0.146,
+                  "text": "Happened to me a lot as a teen, but I didn't figure out why until half a decade later. Lol."
+                },
+                {
+                  "activation": 0.13,
+                  "text": "Ariana should delete thank u, next from YouTube because gays don’t deserve good things on this day"
+                },
+                {
+                  "activation": 0.103,
+                  "text": "I would gladly pay thousands of dollars to fly or charter a boat to take as many people from PR as possible to the mainland. Any idea how I can start?"
+                },
+                {
+                  "activation": 0.093,
+                  "text": "Oh my God Peter Schibetta dude. Wtf. Poor fuckin guy. Obviously he was an asshole. But still. What happened to him was not justified.Poor Beecher too, fuck Keller.I liked Ryan's character though."
+                },
+                {
+                  "activation": 0.093,
+                  "text": "If I do end up getting one I'll be going from a GTX 660 to the RX 480 :("
+                }
+              ],
+              "name": "mixed or low-signal feature",
+              "description": "Tokens and example comments share no coherent theme, spanning brand names, prison-drama references, hardware, and unrelated anecdotes."
+            }
+          ]
+        },
+        {
+          "class_index": 2,
+          "class_name": "30_39",
+          "label": "30 – 39",
+          "tag": "30–39",
+          "tone": "amber",
+          "features": [
+            {
+              "latent_id": 15812,
+              "score": 703.0,
+              "coefficient": 703.0,
+              "top_words": [
+                "back",
+                "people",
+                "time",
+                "for",
+                "maybe",
+                "far",
+                "enough",
+                "we're",
+                "descended",
+                "one"
+              ],
+              "highlight": [
+                "back",
+                "people",
+                "time",
+                "for",
+                "maybe",
+                "far",
+                "enough",
+                "we're",
+                "descended",
+                "one"
+              ],
+              "examples": [
+                {
+                  "activation": 0.063,
+                  "text": "If you go back far enough we're all descended in one way or another from the same people. Its the grain of sand on a chessboard thing; at some point in time, you'll have more great x13 or whatever grandparents than there were people that ever lived."
+                },
+                {
+                  "activation": 0.012,
+                  "text": "First off, welcome! Did I feel ready for NC? Heck no. It wasn't a plan, it just sort of happened. It was a combination of stuff going on in my life then and a comment my therapist made that got me thinking that maybe I step back from my family for a long time (maybe forever). ..."
+                }
+              ],
+              "name": "going back far enough in time or family",
+              "description": "Activates on reflective passages about tracing things back far in time, shared ancestry, or stepping back from family over long spans."
+            },
+            {
+              "latent_id": 15797,
+              "score": 630.18,
+              "coefficient": 630.18,
+              "top_words": [
+                "tumblr",
+                "media",
+                "avo",
+                "jpg",
+                "doooooom",
+                "msm",
+                "ocv",
+                "smirk",
+                "nmdcrc",
+                "vlb"
+              ],
+              "highlight": [
+                "tumblr",
+                "media",
+                "avo",
+                "jpg",
+                "doooooom",
+                "msm",
+                "ocv",
+                "smirk",
+                "nmdcrc",
+                "vlb"
+              ],
+              "examples": [
+                {
+                  "activation": 0.02,
+                  "text": "[Doooooom.]( http://36.media.tumblr.com/5906f0ba812594590c5288c18e6ba7de/tumblr_nj4msm6OCv1te85avo1_1280.jpg)"
+                },
+                {
+                  "activation": 0.015,
+                  "text": "[Smirk.](http://40.media.tumblr.com/c01857b0cd1d98c1c78217f2a20ba34a/tumblr_nmdcrc6vLb1te85avo1_1280.jpg) I hope you like it!^^^[Tumblr](http://heronmarkedblade.tumblr.com)"
+                }
+              ],
+              "name": "embedded Tumblr image links",
+              "description": "Fires on comments containing Tumblr media image URLs (media.tumblr.com .jpg links) attached to short captions."
+            },
+            {
+              "latent_id": 10824,
+              "score": 610.65,
+              "coefficient": 610.65,
+              "top_words": [
+                "week",
+                "dynamo",
+                "garrido",
+                "spend",
+                "vee",
+                "it's",
+                "good",
+                "for",
+                "whole",
+                "mostly"
+              ],
+              "highlight": [
+                "week",
+                "dynamo",
+                "garrido",
+                "spend",
+                "vee",
+                "it's",
+                "good",
+                "for",
+                "whole",
+                "mostly"
+              ],
+              "examples": [
+                {
+                  "activation": 0.134,
+                  "text": "I spend $25 a week at Hy Vee and it's good for the whole week. Mostly so much because I like fresh fruits and veggies"
+                },
+                {
+                  "activation": 0.091,
+                  "text": "so! fun fact! Marc Bianchi, he of INDIAN SUMMER is also Her Space Holiday, which is the literal nexus between emo and dreampop. this song is from 2000: http://store.herspaceholiday.com/track/lydia"
+                },
+                {
+                  "activation": 0.058,
+                  "text": "[Here's](http://www.johnsanidopoulos.com/2011/05/was-jesus-ignorant-of-time-of-his.html) a rundown of what some of the Fathers say on the first issue."
+                },
+                {
+                  "activation": 0.026,
+                  "text": "Dynamo 0-3 Portland GOALSCORERS: Valeri, Adi x2 ATTENDANCE: 21,144 YELLOW: Garrido, Cubo DYNAMO STARTING 11 ------…Deric------… Sarkodie---Horst---Cochran---Williams ------…Sturgis----Garrido------… ------Barnes------…Davis------Alex----- ------..."
+                }
+              ],
+              "name": "mixed or low-signal feature",
+              "description": "Tokens and examples have no shared theme, mixing weekly grocery spending, a band fact, a religion link, and a soccer match report."
+            },
+            {
+              "latent_id": 10999,
+              "score": 610.52,
+              "coefficient": 610.52,
+              "top_words": [
+                "support",
+                "keep",
+                "exes",
+                "music",
+                "man",
+                "evh",
+                "bring",
+                "someone",
+                "system",
+                "sometimes"
+              ],
+              "highlight": [
+                "support",
+                "keep",
+                "exes",
+                "music",
+                "man",
+                "evh",
+                "bring",
+                "someone",
+                "system",
+                "sometimes"
+              ],
+              "examples": [
+                {
+                  "activation": 0.031,
+                  "text": "I always bring someone from my support system. Sometimes a friend, other times it was my boyfriend/husband. Nmom would always behave better in front of strangers, so they were there to support me AND keep her in line. Not sure of your situation, but is a hotel to sleep at an o..."
+                },
+                {
+                  "activation": 0.011,
+                  "text": "I may have the unpopular opinion here, because I actually go so far as to question if I am over-dramatizing the things that happened between me and my ex. I try and treat my exes separately in my head to keep from being the guy always talking about his \"crazy exes\" of which I ..."
+                },
+                {
+                  "activation": 0.011,
+                  "text": "Have you ever tried playing a Music Man EVH guitar? https://www.google.com/search?q=music+man+evh&amp;rlz=1CDGOYI_enUS684US684&amp;hl=en-US&amp;prmd=sivn&amp;source=lnms&amp;tbm=shop&amp;sa=X&amp;ved=0ahUKEwi26qXaodDdAhWUITQIHXMTD48Q_AUIESgB&amp;biw=375&amp;bih=551"
+                }
+              ],
+              "name": "support systems, exes and relationships",
+              "description": "Activates on first-person narration about leaning on a support system, handling past relationships and exes, with occasional gear references."
+            },
+            {
+              "latent_id": 5566,
+              "score": 607.5,
+              "coefficient": 607.5,
+              "top_words": [
+                "compound",
+                "program",
+                "lifts",
+                "minutes",
+                "butters",
+                "sentence",
+                "chicken",
+                "wings",
+                "loaded",
+                "burger"
+              ],
+              "highlight": [
+                "compound",
+                "program",
+                "lifts",
+                "minutes",
+                "butters",
+                "sentence",
+                "chicken",
+                "wings",
+                "loaded",
+                "burger"
+              ],
+              "examples": [
+                {
+                  "activation": 5.012,
+                  "text": "Chicken wings, loaded burger, ribeye and compound butter"
+                },
+                {
+                  "activation": 4.543,
+                  "text": "Why not a compound lift program that's 3 days a week?"
+                },
+                {
+                  "activation": 4.273,
+                  "text": "Yup, that sounds like a good program. Compound lifts with intensity."
+                },
+                {
+                  "activation": 4.098,
+                  "text": "Right, we write our compound nouns with spaces. Entirely different."
+                },
+                {
+                  "activation": 3.826,
+                  "text": "3-4 minutes compound lifts, 1-2 minutes accessories"
+                },
+                {
+                  "activation": 3.615,
+                  "text": "I'm a fan of compound butters, dedicated bin in the freezer full of them"
+                },
+                {
+                  "activation": 3.428,
+                  "text": "Sauces, compound butters, sauteed vegetables, scrambled eggs"
+                },
+                {
+                  "activation": 3.291,
+                  "text": "A compound sentence needs two independent clauses, doesn't it? This sentence has only one."
+                }
+              ],
+              "name": "the word \"compound\": lifts, butters, sentences",
+              "description": "Fires on uses of \"compound\" across contexts: compound lifts, compound butters, and compound nouns or sentences."
+            }
+          ]
+        },
+        {
+          "class_index": 3,
+          "class_name": "40_plus",
+          "label": "40 +",
+          "tag": "40+",
+          "tone": "orange",
+          "features": [
+            {
+              "latent_id": 10334,
+              "score": 705.51,
+              "coefficient": 705.51,
+              "top_words": [
+                "reading",
+                "aloud",
+                "read",
+                "for",
+                "learn",
+                "sometimes",
+                "elderly",
+                "early",
+                "least",
+                "inner"
+              ],
+              "highlight": [
+                "reading",
+                "aloud",
+                "read",
+                "for",
+                "learn",
+                "sometimes",
+                "elderly",
+                "early",
+                "least",
+                "inner"
+              ],
+              "examples": [
+                {
+                  "activation": 15.234,
+                  "text": "If computers haven't arrived in housing for the frail elderly, they will soon. Many, if not most, of today's elderly were still in the workforce in the early 1990s, and would have had a chance to learn at least the basics of computer use. My experience around such places goes ..."
+                },
+                {
+                  "activation": 14.703,
+                  "text": "The \"inner voice\" would appear to be the intermediate stage in the shift from reading aloud to true silent reading.When you learn to read, you read aloud. After a while, you stop saying the words aloud, but your lips may move and you will be reading at speaking pace. Gradually..."
+                },
+                {
+                  "activation": 14.422,
+                  "text": "Weaning is sometimes the child's decision, sometimes the mother's, and sometimes a negotiation between mother and child. Partners are allowed to have an opinion, but they need to express it in a civilised fashion and they need to know when to keep it to themselves. Mothers, in..."
+                },
+                {
+                  "activation": 14.016,
+                  "text": "I won't try to assess President Obama's degree of religious belief, but his patterns and habits as a public speaker make it obvious that he has spent a lot of time in African-American churches."
+                },
+                {
+                  "activation": 13.703,
+                  "text": "I accepted that I was nonreligious only in my early 50s. I can see no possibility of uncracking that egg. The hard part is not what will happen after I die; at most that will be leaving my relatives, friends, and co-workers a few crazy stories to tell. Rather, it is that I'm n..."
+                },
+                {
+                  "activation": 13.508,
+                  "text": "I have a huge panoply of interests, which are quite disparate, but for me are all inter-related. I have found numerous people with specific interest in various individual subject matters, but they are almost always interested for much more conventional reasons and purposes tha..."
+                },
+                {
+                  "activation": 13.453,
+                  "text": "My memories of such things go back close to 50 years, and people did that at least as much back then."
+                }
+              ],
+              "name": "long reflective essays on personal experience",
+              "description": "Activates on long, discursive first-person passages reflecting on reading aloud, the elderly, weaning, religion, and decades of memory."
+            },
+            {
+              "latent_id": 8613,
+              "score": 560.0,
+              "coefficient": 560.0,
+              "top_words": [
+                "boulevard",
+                "laryngeal",
+                "nerve",
+                "wordpress",
+                "read",
+                "basically",
+                "post",
+                "think",
+                "suck",
+                "fairy"
+              ],
+              "highlight": [
+                "boulevard",
+                "laryngeal",
+                "nerve",
+                "wordpress",
+                "read",
+                "basically",
+                "post",
+                "think",
+                "suck",
+                "fairy"
+              ],
+              "examples": [
+                {
+                  "activation": 1.025,
+                  "text": "I find the [Laryngeal Nerve](https://qilong.wordpress.com/2012/06/05/the-stupid-unintelligent-recurrent-laryngeal-nerve-evolution-working-as-not-intended/) in giraffes to be a much more interesting phenomena."
+                },
+                {
+                  "activation": 0.899,
+                  "text": "I read that same book. I have no idea what the name was, but it was basically far future post-apocalyptic, and humans had basically shrunk to the size of monkeys.I think it might be this: https://yellowedandcreased.wordpress.com/2015/06/02/hothouse-brian-aldiss/"
+                },
+                {
+                  "activation": 0.786,
+                  "text": "Ah, yes, the dreaded visit by the [Suck Fairy](https://www.tor.com/2010/09/28/the-suck-fairy/). It's a sad thing when it happens."
+                },
+                {
+                  "activation": 0.776,
+                  "text": "https://www.tor.com/2014/01/28/the-complete-malazan-series/ If you have compatible devices, that links 2 options other than amazon.Also, check kobo."
+                },
+                {
+                  "activation": 0.753,
+                  "text": "See also, [the algebra of defeat](https://burntelectrons.org/2007/03/the-algebra-of-defeat/)."
+                },
+                {
+                  "activation": 0.67,
+                  "text": "Queens Boulevard has been called the \"Boulevard of Death\" in the New York Post and elsewhere. http://nypost.com/2015/07/24/city-to-spend-100m-on-boulevard-of-death-road-revamp/"
+                },
+                {
+                  "activation": 0.668,
+                  "text": "I think it was actually a carry-over from Latin. They reference it in [this article](http://blog.oxforddictionaries.com/2011/11/grammar-myths-prepositions/)."
+                },
+                {
+                  "activation": 0.635,
+                  "text": "Give [this](http://revivestronger.com/2015/11/18/perfect-peaking/) a read"
+                }
+              ],
+              "name": "comments linking to blogs and articles",
+              "description": "Fires on comments that embed external blog or article hyperlinks, frequently WordPress, tor.com, and news domains."
+            },
+            {
+              "latent_id": 925,
+              "score": 525.77,
+              "coefficient": 525.77,
+              "top_words": [
+                "pricing",
+                "graphic",
+                "handbook",
+                "guidelines",
+                "for",
+                "questions",
+                "often",
+                "consider",
+                "picking",
+                "artist's"
+              ],
+              "highlight": [
+                "pricing",
+                "graphic",
+                "handbook",
+                "guidelines",
+                "for",
+                "questions",
+                "often",
+                "consider",
+                "picking",
+                "artist's"
+              ],
+              "examples": [
+                {
+                  "activation": 0.035,
+                  "text": "If you have these questions often, consider picking up [The Graphic Artist's Guild Handbook of Pricing &amp; Ethical Guidelines](http://www.amazon.com/Graphic-Artists-Handbook-Pricing-Guidelines/dp/0932102166), which is a great resource for pricing standards for all things gra..."
+                }
+              ],
+              "name": "recommending a reference handbook or guide",
+              "description": "Activates on text suggesting a published handbook or guide as a resource, such as a graphic artist's pricing and ethics guidelines."
+            },
+            {
+              "latent_id": 11446,
+              "score": 525.13,
+              "coefficient": 525.13,
+              "top_words": [
+                "kids",
+                "lot",
+                "you're",
+                "totally",
+                "gung",
+                "parent",
+                "couldn't",
+                "imagine",
+                "feeling",
+                "ambivalent"
+              ],
+              "highlight": [
+                "kids",
+                "lot",
+                "you're",
+                "totally",
+                "gung",
+                "parent",
+                "couldn't",
+                "imagine",
+                "feeling",
+                "ambivalent"
+              ],
+              "examples": [
+                {
+                  "activation": 0.078,
+                  "text": "3 kids is a lot of kids to have even if you're totally gung ho about being a parent. I couldn't imagine feeling ambivalent and having 3."
+                }
+              ],
+              "name": "ambivalence about having children",
+              "description": "Fires on discussion of parenting and the number of kids, framed around feeling ambivalent or unenthusiastic about being a parent."
+            },
+            {
+              "latent_id": 10255,
+              "score": 508.96,
+              "coefficient": 508.96,
+              "top_words": [
+                "things",
+                "right",
+                "people",
+                "won't",
+                "sure",
+                "you've",
+                "done",
+                "anything",
+                "god",
+                "entity"
+              ],
+              "highlight": [
+                "things",
+                "right",
+                "people",
+                "won't",
+                "sure",
+                "you've",
+                "done",
+                "anything",
+                "god",
+                "entity"
+              ],
+              "examples": [
+                {
+                  "activation": 0.213,
+                  "text": "\"When you do things right, people won't be sure you've done anything at all.\" -God Entity"
+                }
+              ],
+              "name": "Aphoristic quotes credited to a deity",
+              "description": "Fires on epigrammatic quotations attributed to a god or 'God Entity', such as the 'do things right so people won't be sure you've done anything' aphorism."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "introverted",
+      "label": "Introvert vs Extravert",
+      "short": "I / E",
+      "icon": "users",
+      "question": "Is the author more introverted or extraverted?",
+      "model": "GPT-2",
+      "model_info": {
+        "name": "GPT-2 (openai-community/gpt2)",
+        "hookpoint": "transformer.h.8",
+        "layer": 8,
+        "d_in": 768,
+        "num_latents": 16384,
+        "k": 64
+      },
+      "task_name": "introverted",
+      "pooling": "mean_of_mean",
+      "num_latents": 16384,
+      "num_users_train": 6354,
+      "num_users_eval": 1362,
+      "num_comments_train": 10696781,
+      "metrics": {
+        "accuracy": 0.7533,
+        "balanced_accuracy": 0.592,
+        "f1_macro": 0.6007
+      },
+      "poles": [
+        {
+          "class_index": 0,
+          "class_name": "0",
+          "label": "Extraversion (E)",
+          "tag": "Extravert",
+          "tone": "amber",
+          "features": [
+            {
+              "latent_id": 15609,
+              "score": 763.01,
+              "coefficient": -763.01,
+              "top_words": [
+                "enfp",
+                "entp",
+                "you're",
+                "maybe"
+              ],
+              "highlight": [
+                "enfp",
+                "entp",
+                "you're",
+                "maybe"
+              ],
+              "examples": [
+                {
+                  "activation": 10.141,
+                  "text": "ENFP ENFP ENFP ENFP ENFP ENFP ENFP ENFP ENFP ENFP"
+                }
+              ],
+              "name": "Repeated MBTI type code ENFP",
+              "description": "Fires on the four-letter Myers-Briggs type label ENFP, especially when chanted or repeated, plus ENTP and second-person 'you're'."
+            },
+            {
+              "latent_id": 828,
+              "score": 515.22,
+              "coefficient": -515.22,
+              "top_words": [
+                "entj",
+                "maybe",
+                "welcome",
+                "entjland",
+                "tom",
+                "likely",
+                "identifies",
+                "esfp",
+                "fuck"
+              ],
+              "highlight": [
+                "entj",
+                "maybe",
+                "welcome",
+                "entjland",
+                "tom",
+                "likely",
+                "identifies",
+                "esfp",
+                "fuck"
+              ],
+              "examples": [
+                {
+                  "activation": 7.199,
+                  "text": "Where the FUCK is ENTJ????"
+                }
+              ],
+              "name": "ENTJ Myers-Briggs type mentions",
+              "description": "Activates on the MBTI type code ENTJ (and ESFP), often in profanity-laced exclamations about the type, e.g. 'Where the FUCK is ENTJ'."
+            },
+            {
+              "latent_id": 2937,
+              "score": 373.86,
+              "coefficient": -373.86,
+              "top_words": [
+                "untz",
+                "unfalsifiable",
+                "uncivilized",
+                "claim",
+                "stop",
+                "uncivil",
+                "completely",
+                "unfuckable",
+                "yet",
+                "another"
+              ],
+              "highlight": [
+                "untz",
+                "unfalsifiable",
+                "uncivilized",
+                "claim",
+                "stop",
+                "uncivil",
+                "completely",
+                "unfuckable",
+                "yet",
+                "another"
+              ],
+              "examples": [
+                {
+                  "activation": 6.738,
+                  "text": "Therefore making the hypothesis unfalsifiable"
+                }
+              ],
+              "name": "Negating un- prefix and unfalsifiable claims",
+              "description": "Fires on words with the negating 'un-' prefix such as unfalsifiable, uncivilized, uncivil, often in statements that a claim or hypothesis cannot be tested."
+            },
+            {
+              "latent_id": 6334,
+              "score": 354.1,
+              "coefficient": -354.1,
+              "top_words": [
+                "entp",
+                "enfp",
+                "maybe",
+                "sounds",
+                "eternalenvy"
+              ],
+              "highlight": [
+                "entp",
+                "enfp",
+                "maybe",
+                "sounds",
+                "eternalenvy"
+              ],
+              "examples": [
+                {
+                  "activation": 10.484,
+                  "text": "ENFP ENFP ENFP ENFP ENFP ENFP ENFP ENFP ENFP ENFP"
+                },
+                {
+                  "activation": 9.156,
+                  "text": "ENTP ENTP ENTP ENTP ENTP ENTP ENTP ENTP ENTP ENTP ENTP ENTP ENTP ENTP ENTP ENTP ENTP ENTP ENTP ENTP ENTP ENTP ENTP ENTP ENTP ENTP ENTP ENTP ENTP ENTP ENTP ENTP ENTP ENTP ENTP ENTP ENTP ENTP ENTP ENTP ENTP ENTP ENTP ENTP ENTP ENTP ENTP ENTP ENTP ENTP ENTP ENTP ENTP ENTP ENTP EN..."
+                }
+              ],
+              "name": "Chanted MBTI codes ENFP and ENTP",
+              "description": "Activates on long repeated strings of the Myers-Briggs type abbreviations ENFP and ENTP, plus hedging words like maybe and sounds."
+            },
+            {
+              "latent_id": 15461,
+              "score": 326.79,
+              "coefficient": -326.79,
+              "top_words": [
+                "bowler",
+                "mitchell",
+                "origin",
+                "pearce",
+                "player",
+                "foles",
+                "pro",
+                "dae",
+                "chip",
+                "rid"
+              ],
+              "highlight": [
+                "bowler",
+                "mitchell",
+                "origin",
+                "pearce",
+                "player",
+                "foles",
+                "pro",
+                "dae",
+                "chip",
+                "rid"
+              ],
+              "examples": [
+                {
+                  "activation": 0.534,
+                  "text": "Mitchell Pearce is an Origin player"
+                },
+                {
+                  "activation": 0.28,
+                  "text": "But Foles was a Pro Bowler! DAE Chip got rid of all the talent?"
+                },
+                {
+                  "activation": 0.271,
+                  "text": "Yore thinking of the great Origin farm team the New Zealand Warriors"
+                },
+                {
+                  "activation": 0.271,
+                  "text": "Was he on ABC commentary during the Boxing Day test? Him and a young bowler I think"
+                },
+                {
+                  "activation": 0.178,
+                  "text": "Is that a weight class now? It was 189lb to 215lb when I wrestled in 2010."
+                },
+                {
+                  "activation": 0.163,
+                  "text": "[En effet.](http://m.memegen.com/9esuzy.jpg)"
+                },
+                {
+                  "activation": 0.145,
+                  "text": "Well, if Ali batted at 4 instead of Bell, and bowled two overs here and there, then it makes more sense. You are right though"
+                },
+                {
+                  "activation": 0.139,
+                  "text": "That Mitchell Starc would be a destructive pace bowler in all formats. He looked quite pedestrian when he started out, bowling fast-medium and gun barrel straight."
+                }
+              ],
+              "name": "Cricket and rugby player commentary",
+              "description": "Fires on sports talk about cricket bowlers and rugby league players, e.g. Origin players, pace bowlers, Pro Bowler, with names like Pearce and Starc."
+            }
+          ]
+        },
+        {
+          "class_index": 1,
+          "class_name": "1",
+          "label": "Introversion (I)",
+          "tag": "Introvert",
+          "tone": "indigo",
+          "features": [
+            {
+              "latent_id": 8044,
+              "score": 374.2,
+              "coefficient": 374.2,
+              "top_words": [
+                "stare",
+                "probably",
+                "staring",
+                "walls",
+                "dead",
+                "chuck",
+                "norris",
+                "stared",
+                "death",
+                "men"
+              ],
+              "highlight": [
+                "stare",
+                "probably",
+                "staring",
+                "walls",
+                "dead",
+                "chuck",
+                "norris",
+                "stared",
+                "death",
+                "men"
+              ],
+              "examples": [
+                {
+                  "activation": 7.426,
+                  "text": "Chuck Norris stared me to death."
+                },
+                {
+                  "activation": 6.957,
+                  "text": "They stare across the room"
+                },
+                {
+                  "activation": 5.895,
+                  "text": "When we stare at the wall, we only stare at ourselves"
+                }
+              ],
+              "name": "Staring and stares to death",
+              "description": "Activates on the verb stare and its inflections (staring, stared), often in hyperbolic phrasing about staring at walls, across rooms, or staring to death."
+            },
+            {
+              "latent_id": 8040,
+              "score": 312.83,
+              "coefficient": 312.83,
+              "top_words": [
+                "phones",
+                "see",
+                "they're",
+                "still",
+                "aren't",
+                "girls",
+                "freeze",
+                "time",
+                "space",
+                "i'd"
+              ],
+              "highlight": [
+                "phones",
+                "see",
+                "they're",
+                "still",
+                "aren't",
+                "girls",
+                "freeze",
+                "time",
+                "space",
+                "i'd"
+              ],
+              "examples": [
+                {
+                  "activation": 5.016,
+                  "text": "If I could freeze time and space I'd a) sleep in, b) maybe steal some money out of a vending machine, and then c) try to get first."
+                },
+                {
+                  "activation": 4.336,
+                  "text": "See, you get it. They do it usually because they're a) not comfortable breastfeeding in public, or the community they're in shuns it."
+                },
+                {
+                  "activation": 3.883,
+                  "text": "I sincerely hope both A) Hillary wins in a landslide in 2016 and B) she loses the 2020 Dem primary."
+                },
+                {
+                  "activation": 3.857,
+                  "text": "I find the the whitespace to be a) boring, and b) blinding. Personal preference at the end of the day."
+                },
+                {
+                  "activation": 3.572,
+                  "text": "Aha, handy! I just liked that it was a) high priority and b) had a little fish in it."
+                },
+                {
+                  "activation": 3.475,
+                  "text": "Not uncommon. And we still dial phones, even though a) phones haven't commonly had dials in decades, and b) phones aren't really even phones anymore, but rather small computers with telephonic capability."
+                },
+                {
+                  "activation": 3.227,
+                  "text": "I stand by the belief that girls who actually aren't like other girls either a)don't regard such statement as a compliment/positive thing and b) wouldn't tell you."
+                },
+                {
+                  "activation": 3.213,
+                  "text": "See, I still have those abilities in most of my dreams. I a) lose all physical function and am simply floating about or moving myself in a very weak manner or b) I cannot talk."
+                }
+              ],
+              "name": "Enumerated a) b) option lists",
+              "description": "Fires on inline enumerations marked with parenthesized letters 'a)' and 'b)' laying out two or more listed options or reasons."
+            },
+            {
+              "latent_id": 6235,
+              "score": 312.81,
+              "coefficient": 312.81,
+              "top_words": [
+                "independent",
+                "independently",
+                "wen",
+                "financially",
+                "love",
+                "endeavor",
+                "sounds",
+                "aggressively",
+                "baltimore",
+                "city"
+              ],
+              "highlight": [
+                "independent",
+                "independently",
+                "wen",
+                "financially",
+                "love",
+                "endeavor",
+                "sounds",
+                "aggressively",
+                "baltimore",
+                "city"
+              ],
+              "examples": [
+                {
+                  "activation": 8.086,
+                  "text": "this is their independent endeavor?"
+                },
+                {
+                  "activation": 7.676,
+                  "text": "Baltimore is also an independent city"
+                }
+              ],
+              "name": "Independent and independently",
+              "description": "Activates on the word independent and related forms (independently, financially independent), as in independent city or independent endeavor."
+            },
+            {
+              "latent_id": 1525,
+              "score": 295.57,
+              "coefficient": 295.57,
+              "top_words": [
+                "fill",
+                "filled",
+                "cum",
+                "gotta",
+                "dex",
+                "shit",
+                "double",
+                "eat",
+                "filller"
+              ],
+              "highlight": [
+                "fill",
+                "filled",
+                "cum",
+                "gotta",
+                "dex",
+                "shit",
+                "double",
+                "eat",
+                "filller"
+              ],
+              "examples": [
+                {
+                  "activation": 10.602,
+                  "text": "Double was more like fill"
+                }
+              ],
+              "name": "Crude filling and bodily-fluid slang",
+              "description": "Fires on coarse sexual or scatological slang about filling, with tokens like fill, filled, cum, and shit; pattern is vulgar wordplay."
+            },
+            {
+              "latent_id": 9724,
+              "score": 287.35,
+              "coefficient": 287.35,
+              "top_words": [
+                "payoff",
+                "many",
+                "msus",
+                "pretty",
+                "good",
+                "for",
+                "paint",
+                "add",
+                "rust",
+                "ray"
+              ],
+              "highlight": [
+                "payoff",
+                "many",
+                "msus",
+                "pretty",
+                "good",
+                "for",
+                "paint",
+                "add",
+                "rust",
+                "ray"
+              ],
+              "examples": [
+                {
+                  "activation": 3.846,
+                  "text": "Pretty good for MS paint!"
+                }
+              ],
+              "name": "Praise for MS Paint and amateur art",
+              "description": "Fires on tokens like \"MS paint\", \"pretty good\", and \"add\" in short complimentary remarks about hand-made or low-fidelity artwork."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "intuitive",
+      "label": "Intuitive vs Sensing",
+      "short": "N / S",
+      "icon": "sparkles",
+      "question": "Does the author rely more on intuition or sensing?",
+      "model": "Qwen3-4B",
+      "model_info": {
+        "name": "Qwen3-4B-Base",
+        "hookpoint": "model.layers.25",
+        "layer": 25,
+        "d_in": 2560,
+        "num_latents": 16384,
+        "k": 64
+      },
+      "task_name": "intuitive_qwen",
+      "pooling": "mean_of_mean",
+      "num_latents": 16384,
+      "num_users_train": 6357,
+      "num_users_eval": 1363,
+      "num_comments_train": 10728331,
+      "metrics": {
+        "accuracy": 0.8569,
+        "balanced_accuracy": 0.5757,
+        "f1_macro": 0.5897
+      },
+      "poles": [
+        {
+          "class_index": 0,
+          "class_name": "0",
+          "label": "Sensing (S)",
+          "tag": "Sensing",
+          "tone": "green",
+          "features": [
+            {
+              "latent_id": 9092,
+              "score": 435.62,
+              "coefficient": -435.62,
+              "top_words": [
+                "product",
+                "newegg",
+                "item",
+                "for",
+                "amazon",
+                "probably",
+                "price",
+                "raised",
+                "keeps",
+                "selling"
+              ],
+              "highlight": [
+                "product",
+                "newegg",
+                "item",
+                "for",
+                "amazon",
+                "probably",
+                "price",
+                "raised",
+                "keeps",
+                "selling"
+              ],
+              "examples": [
+                {
+                  "activation": 0.063,
+                  "text": "Oh Amazon probably has the price raised because it keeps selling out. [Newegg](http://www.newegg.com/Product/Product.aspx?Item=9SIA1N82YR4277&amp;cm_re=XL2730z-_-24-014-451-_-Product) had it for $645, and I'm sure that'll go down to $600 when it's back in stock."
+                },
+                {
+                  "activation": 0.019,
+                  "text": "Best I could come up with for now:https://m.ebay.ca/itm/5PCS-4-Port-3-5mm-x-1-35mm-Barrel-Female-DC-Plug-Splitter-Connector-Adapters-/282508459142?hash=item41c6d0fc86%3Ag%3A6ocAAOSww9xZKmww&amp;_trkparms=pageci%253Acaa091c7-adc6-11e7-a930-74dbd180ddac%257Cparentrq%253A06ac9f7c..."
+                }
+              ],
+              "name": "Online retail product and price links",
+              "description": "Activates on shopping-site vocabulary (Amazon, Newegg, eBay, item, product, price) within comments linking to listings and discussing stock or pricing."
+            },
+            {
+              "latent_id": 10867,
+              "score": 402.73,
+              "coefficient": -402.73,
+              "top_words": [
+                "i'm",
+                "time",
+                "for",
+                "it's",
+                "can't",
+                "call",
+                "stranger",
+                "want",
+                "respect",
+                "people"
+              ],
+              "highlight": [
+                "i'm",
+                "time",
+                "for",
+                "it's",
+                "can't",
+                "call",
+                "stranger",
+                "want",
+                "respect",
+                "people"
+              ],
+              "examples": [
+                {
+                  "activation": 0.051,
+                  "text": "Depends on who it is and how often they do it. If it's a stranger coming up to me in the street or knocking on my door then I won't give them the time of day. If its a friend and they want to talk beliefs to me then as long as they respect me then I will be nothing but respect..."
+                },
+                {
+                  "activation": 0.047,
+                  "text": "I had a lot of scary interactions with people as a retail employee. But the worst ones were always when I had to refuse alcohol sales. You can't sell alcohol to someone already intoxicated so if I think they are under the influence I can't sell. This guy came in smelling like ..."
+                },
+                {
+                  "activation": 0.035,
+                  "text": "I worked in an IT call center, way back. We had this one caller. I still remember his name and everything. 45 minutes to 2 hours, without fail, several times a week. All reps made a very covert Announcement to the others, every time he called. Be alert! if the call is dropped,..."
+                },
+                {
+                  "activation": 0.034,
+                  "text": "At least for me (I can't speak for everyone) Remaining honest with yourself, and open with others is the main key I use to handling and living with my mental illness in a healthy way. I also monitor things that make my symptoms worse, and try to either avoid those situations i..."
+                },
+                {
+                  "activation": 0.034,
+                  "text": "This happened to me once while I was at work, except it was my husband (then boyfriend). I'd just gotten off work and saw all the missed calls, so I called him, frantic, \"What's up, what's wrong, is everything ok? Why did you call me so many times???\" Him: \"Oh, I just wanted t..."
+                },
+                {
+                  "activation": 0.032,
+                  "text": "Milder versions of this actually happened when my boss got out of an abusive relationship and his ex-wife was launching that shit storm that abusers do when they want their victim back. I would have let him stay for a short time because he's always been decent, but since I'm a..."
+                },
+                {
+                  "activation": 0.024,
+                  "text": "This sounds really fucked up when I type it so I'm sorry but it's something that's always bothered me. Those people that put messages/pictures/videos up on the internet that say 'you are beautiful.' I'm sorry, I'm not beautiful, I'm not and I know it. A random stranger that ha..."
+                },
+                {
+                  "activation": 0.01,
+                  "text": "Yes I have, usually if it's with someone who I don't feel like spending extended amounts of time with. About 2 years ago when I was 27 I met an 18 year old off tinder or okcupid (don't remember) we had 1 date where we went out for sushi and then hooked up/she spent the night. ..."
+                }
+              ],
+              "name": "Workplace encounters with difficult people",
+              "description": "Fires on first-person narratives about handling strangers, callers, or customers at work, with tokens like \"can't\", \"call\", \"stranger\", and \"respect\"."
+            },
+            {
+              "latent_id": 9316,
+              "score": 396.81,
+              "coefficient": -396.81,
+              "top_words": [
+                "aristocrats",
+                "istp",
+                "cistern",
+                "law",
+                "check",
+                "sistern",
+                "miss",
+                "sisqo",
+                "hill",
+                "close"
+              ],
+              "highlight": [
+                "aristocrats",
+                "istp",
+                "cistern",
+                "law",
+                "check",
+                "sistern",
+                "miss",
+                "sisqo",
+                "hill",
+                "close"
+              ],
+              "examples": [
+                {
+                  "activation": 13.023,
+                  "text": "I had my cistern law check my sistern."
+                }
+              ],
+              "name": "Phonetic wordplay on -istern/-istp sounds",
+              "description": "Activates on rhyming near-homophone puns (cistern, sistern, ISTP, Sisqo) clustered in short punning sentences."
+            },
+            {
+              "latent_id": 13234,
+              "score": 374.92,
+              "coefficient": -374.92,
+              "top_words": [
+                "single",
+                "one",
+                "hate",
+                "comments",
+                "good",
+                "luck",
+                "female",
+                "stereotype",
+                "thing",
+                "morning"
+              ],
+              "highlight": [
+                "single",
+                "one",
+                "hate",
+                "comments",
+                "good",
+                "luck",
+                "female",
+                "stereotype",
+                "thing",
+                "morning"
+              ],
+              "examples": [
+                {
+                  "activation": 3.715,
+                  "text": "Good luck to each and every one of us!"
+                },
+                {
+                  "activation": 3.566,
+                  "text": "I hate every single female stereotype."
+                },
+                {
+                  "activation": 3.562,
+                  "text": "I hate every single thing about this"
+                },
+                {
+                  "activation": 3.539,
+                  "text": "Every single one of them this morning is getting me."
+                },
+                {
+                  "activation": 3.377,
+                  "text": "literally every single one of these is properly pimping."
+                },
+                {
+                  "activation": 3.359,
+                  "text": "Do every single one of your comments have emojis?"
+                },
+                {
+                  "activation": 2.801,
+                  "text": "Those comments underneath. It's like Hitlary is behind each and every single one of them."
+                },
+                {
+                  "activation": 2.732,
+                  "text": "I get tired of the game every once in a while, but I've always come back to it."
+                }
+              ],
+              "name": "Emphatic 'every single one' constructions",
+              "description": "Fires on the intensifier phrase \"every single one/thing\" and \"each and every\", often in sweeping statements of liking, hating, or disdain."
+            },
+            {
+              "latent_id": 2824,
+              "score": 365.33,
+              "coefficient": -365.33,
+              "top_words": [
+                "amazon",
+                "chair",
+                "ref",
+                "utf",
+                "red",
+                "pill",
+                "instructions",
+                "unclear",
+                "stuck",
+                "ass"
+              ],
+              "highlight": [
+                "amazon",
+                "chair",
+                "ref",
+                "utf",
+                "red",
+                "pill",
+                "instructions",
+                "unclear",
+                "stuck",
+                "ass"
+              ],
+              "examples": [
+                {
+                  "activation": 0.039,
+                  "text": "Instructions unclear, [chair stuck in ass](http://www.amazon.com/Backto20s%C2%AE-Erotic-Sex-Chair-Love/dp/B00OBJA33A/ref=pd_sim_sbs_196_9?ie=UTF8&amp;dpID=41sCEuDRluL&amp;dpSrc=sims&amp;preST=_AC_UL160_SR122%2C160_&amp;refRID=1WXZDHB2SNH07DD37TWY)."
+                },
+                {
+                  "activation": 0.032,
+                  "text": "It's got 39 reviews on [Amazon](https://www.amazon.com/Red-Pill-Marc-Angelucci/dp/B01LTI1PCI/ref=sr_1_cc_1?s=aps&amp;ie=UTF8&amp;qid=1488923767&amp;sr=1-1-catcorr&amp;keywords=the+red+pill)."
+                }
+              ],
+              "name": "Amazon links with crude or joke products",
+              "description": "Activates on Amazon URL fragments (ref, UTF8, dp) paired with risque or meme product references such as sex chairs or 'red pill'."
+            }
+          ]
+        },
+        {
+          "class_index": 1,
+          "class_name": "1",
+          "label": "Intuition (N)",
+          "tag": "Intuition",
+          "tone": "violet",
+          "features": [
+            {
+              "latent_id": 326,
+              "score": 334.76,
+              "coefficient": 334.76,
+              "top_words": [
+                "dark",
+                "brotherhood",
+                "textbook",
+                "intp",
+                "inxx"
+              ],
+              "highlight": [
+                "dark",
+                "brotherhood",
+                "textbook",
+                "intp",
+                "inxx"
+              ],
+              "examples": [
+                {
+                  "activation": 14.188,
+                  "text": "The In-the-dark Brotherhood"
+                }
+              ],
+              "name": "MBTI intuitive type abbreviations",
+              "description": "Fires on intuitive-type codes (INTP, INxx) and the 'In-the-dark Brotherhood' wordplay riffing on Elder Scrolls naming."
+            },
+            {
+              "latent_id": 1718,
+              "score": 296.86,
+              "coefficient": 296.86,
+              "top_words": [
+                "thumb",
+                "shutterstock",
+                "display",
+                "pic",
+                "logo",
+                "stock",
+                "photo",
+                "jpg",
+                "article",
+                "rouge"
+              ],
+              "highlight": [
+                "thumb",
+                "shutterstock",
+                "display",
+                "pic",
+                "logo",
+                "stock",
+                "photo",
+                "jpg",
+                "article",
+                "rouge"
+              ],
+              "examples": [
+                {
+                  "activation": 1.451,
+                  "text": "[conda on the landing pad](https://thumb1.shutterstock.com/display_pic_with_logo/2845621/407071360/stock-photo-the-door-stopper-407071360.jpg)"
+                },
+                {
+                  "activation": 1.361,
+                  "text": "https://www.newscientist.com/article/2166808-getting-just-6-hours-of-sleep-is-linked-to-mental-health-issues/"
+                },
+                {
+                  "activation": 1.292,
+                  "text": "[Rouge is overpowdered!](http://thumb7.shutterstock.com/display_pic_with_logo/1703182/200569901/stock-photo-crumbled-rouge-with-brush-200569901.jpg)"
+                },
+                {
+                  "activation": 1.113,
+                  "text": "[That's how they getcha](http://thumb1.shutterstock.com/display_pic_with_logo/562921/117165418/stock-photo-bear-trap-isolated-on-white-background-117165418.jpg)"
+                },
+                {
+                  "activation": 0.961,
+                  "text": "https://www.scientificamerican.com/article/panic-attacks-as-ph-problem/"
+                }
+              ],
+              "name": "Stock photo and article image links",
+              "description": "Activates on stock-image URL fragments (shutterstock, display_pic_with_logo, jpg) and news-article links embedded in comments."
+            },
+            {
+              "latent_id": 4998,
+              "score": 291.77,
+              "coefficient": 291.77,
+              "top_words": [
+                "write",
+                "own",
+                "book",
+                "songs",
+                "for",
+                "poems",
+                "short",
+                "stories",
+                "maybe",
+                "start"
+              ],
+              "highlight": [
+                "write",
+                "own",
+                "book",
+                "songs",
+                "for",
+                "poems",
+                "short",
+                "stories",
+                "maybe",
+                "start"
+              ],
+              "examples": [
+                {
+                  "activation": 9.047,
+                  "text": "i play the piano and write my own songs (im actually making a self-produced ep for fun right now)."
+                },
+                {
+                  "activation": 8.836,
+                  "text": "I write. Mostly critique pieces for an international politics blog along with some soccer related stuff."
+                },
+                {
+                  "activation": 8.422,
+                  "text": "I just live to create things, whether they are games or songs, or digital art... whatever."
+                },
+                {
+                  "activation": 8.375,
+                  "text": "I write poems and short stories. One such short story saved me from the darkest place"
+                },
+                {
+                  "activation": 8.234,
+                  "text": "I'm writing a book kind of like this."
+                },
+                {
+                  "activation": 8.0,
+                  "text": "Write a book maybe or start your own business."
+                },
+                {
+                  "activation": 7.98,
+                  "text": "I write creatively. Raps, poems, stories, topics that'll make you think."
+                }
+              ],
+              "name": "Creative writing and self-made art",
+              "description": "Fires on first-person statements about writing books, songs, poems, raps, or stories, with tokens like \"write\", \"own\", \"book\", and \"poems\"."
+            },
+            {
+              "latent_id": 737,
+              "score": 286.86,
+              "coefficient": 286.86,
+              "top_words": [
+                "connection",
+                "connect",
+                "bitconnnnnneeeecccct",
+                "stability",
+                "wifi",
+                "intellectual",
+                "connected",
+                "only",
+                "usually",
+                "window"
+              ],
+              "highlight": [
+                "connection",
+                "connect",
+                "bitconnnnnneeeecccct",
+                "stability",
+                "wifi",
+                "intellectual",
+                "connected",
+                "only",
+                "usually",
+                "window"
+              ],
+              "examples": [
+                {
+                  "activation": 16.016,
+                  "text": "They can connect to wifi?"
+                },
+                {
+                  "activation": 15.5,
+                  "text": "They usually connect to a window"
+                },
+                {
+                  "activation": 15.086,
+                  "text": "My connection is more than fine."
+                }
+              ],
+              "name": "Connecting and connection to devices/wifi",
+              "description": "Activates on the words \"connect\", \"connection\", and \"wifi\" in short remarks about network or device connectivity."
+            },
+            {
+              "latent_id": 8957,
+              "score": 267.63,
+              "coefficient": 267.63,
+              "top_words": [
+                "aesthetic",
+                "style",
+                "syle",
+                "stylin",
+                "stylish",
+                "stylishly",
+                "exclusive",
+                "css",
+                "cascading",
+                "sheets"
+              ],
+              "highlight": [
+                "aesthetic",
+                "style",
+                "syle",
+                "stylin",
+                "stylish",
+                "stylishly",
+                "exclusive",
+                "css",
+                "cascading",
+                "sheets"
+              ],
+              "examples": [
+                {
+                  "activation": 10.539,
+                  "text": "CSS == Cascading Style Sheets Style Sheet != coding language"
+                }
+              ],
+              "name": "CSS and visual styling terminology",
+              "description": "Activates on web-styling vocabulary — CSS, cascading style sheets — and the 'style/stylish/aesthetic' word family."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "thinking",
+      "label": "Thinking vs Feeling",
+      "short": "T / F",
+      "icon": "brain",
+      "question": "Does the author lean toward thinking or feeling?",
+      "model": "Qwen3-4B",
+      "model_info": {
+        "name": "Qwen3-4B-Base",
+        "hookpoint": "model.layers.25",
+        "layer": 25,
+        "d_in": 2560,
+        "num_latents": 16384,
+        "k": 64
+      },
+      "task_name": "thinking_qwen",
+      "pooling": "mean_of_mean",
+      "num_latents": 16384,
+      "num_users_train": 6356,
+      "num_users_eval": 1362,
+      "num_comments_train": 10992938,
+      "metrics": {
+        "accuracy": 0.7291,
+        "balanced_accuracy": 0.6871,
+        "f1_macro": 0.6933
+      },
+      "poles": [
+        {
+          "class_index": 0,
+          "class_name": "0",
+          "label": "Feeling (F)",
+          "tag": "Feeling",
+          "tone": "pink",
+          "features": [
+            {
+              "latent_id": 4154,
+              "score": 392.92,
+              "coefficient": -392.92,
+              "top_words": [
+                "ideal",
+                "ideally",
+                "assume",
+                "gas",
+                "yes",
+                "correct",
+                "idealists",
+                "already",
+                "exists",
+                "idealism"
+              ],
+              "highlight": [
+                "ideal",
+                "ideally",
+                "assume",
+                "gas",
+                "yes",
+                "correct",
+                "idealists",
+                "already",
+                "exists",
+                "idealism"
+              ],
+              "examples": [
+                {
+                  "activation": 11.867,
+                  "text": "But /r/Idealists already exists."
+                },
+                {
+                  "activation": 10.719,
+                  "text": "How does Ne have to do with idealism...?"
+                },
+                {
+                  "activation": 9.953,
+                  "text": "The ideal version of capitalism has never existed either."
+                },
+                {
+                  "activation": 9.586,
+                  "text": "Ideally CCP would just remove them entirely."
+                }
+              ],
+              "name": "The ideal and idealism word family",
+              "description": "Fires on 'ideal', 'ideally', 'idealism' and 'idealists', usually in political or philosophical remarks."
+            },
+            {
+              "latent_id": 13739,
+              "score": 348.9,
+              "coefficient": -348.9,
+              "top_words": [
+                "muthead",
+                "team",
+                "builder",
+                "based",
+                "earlier",
+                "design",
+                "made",
+                "run",
+                "successfully",
+                "for"
+              ],
+              "highlight": [
+                "muthead",
+                "team",
+                "builder",
+                "based",
+                "earlier",
+                "design",
+                "made",
+                "run",
+                "successfully",
+                "for"
+              ],
+              "examples": [
+                {
+                  "activation": 0.016,
+                  "text": "There you go: http://www.muthead.com/17/team-builder/706030This is based on an earlier design I made (and have run successfully for a while). If you get a WC jersey/coach (really cheap atm), that lineup is quite deadly. All guys with SE/WC gets +2 CTH +5 CIT, and Conley is alr..."
+                }
+              ],
+              "name": "Madden Ultimate Team builder links",
+              "description": "Activates on Muthead 'team-builder' URLs and roster/design talk for the Madden Ultimate Team game."
+            },
+            {
+              "latent_id": 14796,
+              "score": 329.81,
+              "coefficient": -329.81,
+              "top_words": [
+                "hit",
+                "kilometers",
+                "miles",
+                "island",
+                "time",
+                "english",
+                "mizon",
+                "snail",
+                "recovery",
+                "gel"
+              ],
+              "highlight": [
+                "hit",
+                "kilometers",
+                "miles",
+                "island",
+                "time",
+                "english",
+                "mizon",
+                "snail",
+                "recovery",
+                "gel"
+              ],
+              "examples": [
+                {
+                  "activation": 0.072,
+                  "text": "\"The earthquake hit less than 30 kilometers (19 miles) off the island of Makira -- and 70 kilometers (43 miles) southwest of the island's city of Kirakira -- about 4:38 a.m. local time Friday (12:38 p.m. ET Thursday)\"Damn, Solomon must hate Based Cake to almost hit her Island."
+                },
+                {
+                  "activation": 0.048,
+                  "text": "My freshman year of highschool there was an English teacher who was part of the IB program that stopped showing up after winter break. Turns out she was never qualified to teach English and was fired. I don't know how long she had been there though."
+                },
+                {
+                  "activation": 0.017,
+                  "text": "I HIGHLY recommend [Mizon Snail Recovery Gel Cream]([MIZON] Snail Recovery Gel Cream 45ml (1.52 fl.oz.) Pack of 2 https://www.amazon.com/dp/B00NTR9B6A/ref=cm_sw_r_cp_api_B5ksybXT6G127) I use it on scars and pre scars all the time. It's amazing."
+                }
+              ],
+              "name": "mixed or low-signal feature",
+              "description": "Tokens and examples span unrelated topics — earthquakes, school, skincare — with no shared linguistic theme."
+            },
+            {
+              "latent_id": 6130,
+              "score": 324.99,
+              "coefficient": -324.99,
+              "top_words": [
+                "it's",
+                "albatross",
+                "opalescent",
+                "know",
+                "motark",
+                "hasn't",
+                "raised",
+                "prices",
+                "kilos",
+                "almost"
+              ],
+              "highlight": [
+                "it's",
+                "albatross",
+                "opalescent",
+                "know",
+                "motark",
+                "hasn't",
+                "raised",
+                "prices",
+                "kilos",
+                "almost"
+              ],
+              "examples": [
+                {
+                  "activation": 0.049,
+                  "text": "I know Motark hasn't raised prices but he has $82 kilos.... it's almost all gone though so it's not like it makes a difference."
+                },
+                {
+                  "activation": 0.01,
+                  "text": "I use [NARS Albatross] (http://www.narscosmetics.com/USA/albatross-highlighting-blush/0607845051312.html) and it's pretty, it's a more [yellow-y opalescent color] (https://www.google.com/search?q=opalescent&amp;source=lnms&amp;tbm=isch&amp;sa=X&amp;ved=0ahUKEwiuy7268qfOAhVKQiY..."
+                }
+              ],
+              "name": "Makeup highlighters and reseller prices",
+              "description": "Fires on cosmetics names (e.g. NARS Albatross) and reseller stock/price chatter such as 'raised prices' and 'kilos'."
+            },
+            {
+              "latent_id": 6334,
+              "score": 323.95,
+              "coefficient": -323.95,
+              "top_words": [
+                "adult",
+                "only",
+                "cakes",
+                "hes",
+                "bur",
+                "babies",
+                "need",
+                "let's",
+                "rage",
+                "adultswim"
+              ],
+              "highlight": [
+                "adult",
+                "only",
+                "cakes",
+                "hes",
+                "bur",
+                "babies",
+                "need",
+                "let's",
+                "rage",
+                "adultswim"
+              ],
+              "examples": [
+                {
+                  "activation": 21.078,
+                  "text": "Bur what about adult babies????"
+                },
+                {
+                  "activation": 16.859,
+                  "text": "^Let's rage at AdultSwim."
+                },
+                {
+                  "activation": 15.781,
+                  "text": "All cakes are adult cakes."
+                }
+              ],
+              "name": "The word 'adult' across varied contexts",
+              "description": "Activates on the token 'adult' in unrelated phrases — adult cakes, adult babies, AdultSwim."
+            }
+          ]
+        },
+        {
+          "class_index": 1,
+          "class_name": "1",
+          "label": "Thinking (T)",
+          "tag": "Thinking",
+          "tone": "blue",
+          "features": [
+            {
+              "latent_id": 4189,
+              "score": 457.29,
+              "coefficient": 457.29,
+              "top_words": [
+                "know",
+                "learn",
+                "don't",
+                "knowledge",
+                "love",
+                "everything",
+                "only",
+                "nothing",
+                "highest",
+                "degree"
+              ],
+              "highlight": [
+                "know",
+                "learn",
+                "don't",
+                "knowledge",
+                "love",
+                "everything",
+                "only",
+                "nothing",
+                "highest",
+                "degree"
+              ],
+              "examples": [
+                {
+                  "activation": 9.492,
+                  "text": "Knowledge, above all else. I love to learn, I love to solve problems. I like to absorb everything I can and it fulfills me."
+                },
+                {
+                  "activation": 8.977,
+                  "text": "We can know only that we know nothing. And that is the highest degree"
+                },
+                {
+                  "activation": 8.969,
+                  "text": "The more I learn, the more I realize how much I don't know. - Enstein"
+                },
+                {
+                  "activation": 8.812,
+                  "text": "\"...there are known knowns; there are things we know we know. We also know there are known unknowns; that is to say we know there are some things we do not know. But there are also unknown unknowns – the ones we don't know we don't know.\" -Rumsfeld"
+                },
+                {
+                  "activation": 8.781,
+                  "text": "Not to sound pedantic, but ignorance is simply a state of not knowing something. Any sincere question by definition stems directly from ignorance (and an urge to change it)."
+                },
+                {
+                  "activation": 8.625,
+                  "text": "And we can't know it all. Each technology is a thousand-page book. And I touch dozens of technologies every day.It's like being a lawyer. Law school doesn't teach you everything. It teaches you how to identify what you need when you're ignorant, and then how to find what you n..."
+                },
+                {
+                  "activation": 8.57,
+                  "text": "Never be satisfied with knowledge. Strive to learn more."
+                }
+              ],
+              "name": "Love of knowledge and lifelong learning",
+              "description": "Fires on reflections about knowledge, learning and intellectual humility, e.g. 'the more I learn, the more I realize how much I don't know'."
+            },
+            {
+              "latent_id": 2405,
+              "score": 331.01,
+              "coefficient": 331.01,
+              "top_words": [
+                "winter",
+                "coming",
+                "winter's",
+                "fury",
+                "discontent"
+              ],
+              "highlight": [
+                "winter",
+                "coming",
+                "winter's",
+                "fury",
+                "discontent"
+              ],
+              "examples": [
+                {
+                  "activation": 17.75,
+                  "text": "The winter of your discontent"
+                }
+              ],
+              "name": "Shakespearean \"winter of discontent\" phrasing",
+              "description": "Fires on the literary phrase \"winter of discontent\" and related winter/fury wording echoing the famous opening line."
+            },
+            {
+              "latent_id": 11243,
+              "score": 293.46,
+              "coefficient": 293.46,
+              "top_words": [
+                "time",
+                "seconds",
+                "min",
+                "lots",
+                "good",
+                "music",
+                "place",
+                "minutes",
+                "online",
+                "faster"
+              ],
+              "highlight": [
+                "time",
+                "seconds",
+                "min",
+                "lots",
+                "good",
+                "music",
+                "place",
+                "minutes",
+                "online",
+                "faster"
+              ],
+              "examples": [
+                {
+                  "activation": 7.164,
+                  "text": "Lots of time, and good music."
+                },
+                {
+                  "activation": 6.898,
+                  "text": "Not the time or the place."
+                },
+                {
+                  "activation": 6.836,
+                  "text": "~~2~~0 Minutes, 30 Seconds"
+                },
+                {
+                  "activation": 6.508,
+                  "text": "Online is faster and more convenient."
+                },
+                {
+                  "activation": 6.34,
+                  "text": "This may be the fastest way, but probably not the most efficient."
+                },
+                {
+                  "activation": 6.27,
+                  "text": "Not every has the time, money, motivation, or need."
+                }
+              ],
+              "name": "Remarks about time, speed and efficiency",
+              "description": "Fires on short statements about elapsed time, minutes and seconds, and being faster, quicker or more convenient."
+            },
+            {
+              "latent_id": 14145,
+              "score": 285.26,
+              "coefficient": 285.26,
+              "top_words": [
+                "knowledge",
+                "power",
+                "lacking",
+                "thanks",
+                "own",
+                "knawledge",
+                "drop",
+                "ignorance",
+                "bliss",
+                "hassle"
+              ],
+              "highlight": [
+                "knowledge",
+                "power",
+                "lacking",
+                "thanks",
+                "own",
+                "knawledge",
+                "drop",
+                "ignorance",
+                "bliss",
+                "hassle"
+              ],
+              "examples": [
+                {
+                  "activation": 13.305,
+                  "text": "Ignorance is bliss, knowledge is hassle"
+                }
+              ],
+              "name": "Aphorisms on knowledge versus ignorance",
+              "description": "Fires on maxim-style phrasings pairing knowledge and power with ignorance and bliss, e.g. \"ignorance is bliss\"."
+            },
+            {
+              "latent_id": 10786,
+              "score": 278.36,
+              "coefficient": 278.36,
+              "top_words": [
+                "efficiency",
+                "german",
+                "efficient",
+                "moneybags",
+                "government",
+                "office",
+                "greatfficency"
+              ],
+              "highlight": [
+                "efficiency",
+                "german",
+                "efficient",
+                "moneybags",
+                "government",
+                "office",
+                "greatfficency"
+              ],
+              "examples": [
+                {
+                  "activation": 20.297,
+                  "text": "The efficiency of a government office."
+                }
+              ],
+              "name": "Bureaucratic and German efficiency phrasing",
+              "description": "Fires on references to efficiency, especially of government offices and the trope of German efficiency."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "perceiving",
+      "label": "Perceiving vs Judging",
+      "short": "P / J",
+      "icon": "compass",
+      "question": "Is the author more perceiving or judging?",
+      "model": "GPT-2",
+      "model_info": {
+        "name": "GPT-2 (openai-community/gpt2)",
+        "hookpoint": "transformer.h.8",
+        "layer": 8,
+        "d_in": 768,
+        "num_latents": 16384,
+        "k": 64
+      },
+      "task_name": "perceiving",
+      "pooling": "mean_of_mean",
+      "num_latents": 16384,
+      "num_users_train": 6351,
+      "num_users_eval": 1361,
+      "num_comments_train": 10998355,
+      "metrics": {
+        "accuracy": 0.6113,
+        "balanced_accuracy": 0.5937,
+        "f1_macro": 0.5941
+      },
+      "poles": [
+        {
+          "class_index": 0,
+          "class_name": "0",
+          "label": "Judging (J)",
+          "tag": "Judging",
+          "tone": "teal",
+          "features": [
+            {
+              "latent_id": 15703,
+              "score": 362.79,
+              "coefficient": -362.79,
+              "top_words": [
+                "onion",
+                "onions",
+                "man",
+                "holy",
+                "french",
+                "dip",
+                "spring",
+                "gotta",
+                "love",
+                "ontology"
+              ],
+              "highlight": [
+                "onion",
+                "onions",
+                "man",
+                "holy",
+                "french",
+                "dip",
+                "spring",
+                "gotta",
+                "love",
+                "ontology"
+              ],
+              "examples": [
+                {
+                  "activation": 3.145,
+                  "text": "Gotta love an ontology debate."
+                }
+              ],
+              "name": "Onion and 'onto-' word fragments",
+              "description": "Fires on 'onion'/'onions' and the 'onto-' string in 'ontology', as in 'Gotta love an ontology debate', plus 'man, holy' interjections."
+            },
+            {
+              "latent_id": 13689,
+              "score": 341.37,
+              "coefficient": -341.37,
+              "top_words": [
+                "infamous",
+                "love",
+                "infographics",
+                "luigi",
+                "infrared",
+                "term",
+                "influencer",
+                "check",
+                "mildlyinfuriating",
+                "aka"
+              ],
+              "highlight": [
+                "infamous",
+                "love",
+                "infographics",
+                "luigi",
+                "infrared",
+                "term",
+                "influencer",
+                "check",
+                "mildlyinfuriating",
+                "aka"
+              ],
+              "examples": [
+                {
+                  "activation": 8.727,
+                  "text": "Check out Infamous and/or Infamous 2!"
+                }
+              ],
+              "name": "Words with the 'in-fa/in-fo/in-flu' prefix",
+              "description": "Activates on 'inf-' words like infamous, infographics, infrared, influencer, as in 'Check out Infamous and/or Infamous 2!'."
+            },
+            {
+              "latent_id": 12340,
+              "score": 272.9,
+              "coefficient": -272.9,
+              "top_words": [
+                "efficient",
+                "efficiency",
+                "german",
+                "maybe",
+                "everyone",
+                "cares",
+                "optimistic",
+                "seems",
+                "woefully",
+                "inefficient"
+              ],
+              "highlight": [
+                "efficient",
+                "efficiency",
+                "german",
+                "maybe",
+                "everyone",
+                "cares",
+                "optimistic",
+                "seems",
+                "woefully",
+                "inefficient"
+              ],
+              "examples": [
+                {
+                  "activation": 4.637,
+                  "text": "Because not everyone cares about efficiency"
+                }
+              ],
+              "name": "Efficiency and inefficiency vocabulary",
+              "description": "Fires on tokens about efficiency, efficient and inefficient (often tied to 'German'), as in 'Because not everyone cares about efficiency'."
+            },
+            {
+              "latent_id": 2052,
+              "score": 271.51,
+              "coefficient": -271.51,
+              "top_words": [
+                "point",
+                "chopin",
+                "come",
+                "dark",
+                "side",
+                "proceed",
+                "towards",
+                "face",
+                "dentist",
+                "beat"
+              ],
+              "highlight": [
+                "point",
+                "chopin",
+                "come",
+                "dark",
+                "side",
+                "proceed",
+                "towards",
+                "face",
+                "dentist",
+                "beat"
+              ],
+              "examples": [
+                {
+                  "activation": 2.85,
+                  "text": "I like to get to the point."
+                }
+              ],
+              "name": "Getting to the point directly",
+              "description": "Activates on 'point' and directional phrasing (come, proceed, towards), as in 'I like to get to the point'."
+            },
+            {
+              "latent_id": 828,
+              "score": 266.07,
+              "coefficient": -266.07,
+              "top_words": [
+                "entj",
+                "entjs",
+                "he's",
+                "obviously",
+                "you're",
+                "obvious",
+                "way",
+                "definitely",
+                "for",
+                "don't"
+              ],
+              "highlight": [
+                "entj",
+                "entjs",
+                "he's",
+                "obviously",
+                "you're",
+                "obvious",
+                "way",
+                "definitely",
+                "for",
+                "don't"
+              ],
+              "examples": [
+                {
+                  "activation": 6.535,
+                  "text": "I don't hate ENTJs though"
+                },
+                {
+                  "activation": 5.145,
+                  "text": "Adolf Hitler wasn't ENTJ as well."
+                },
+                {
+                  "activation": 5.133,
+                  "text": "Nice to see another ENTJ, type 5 :)"
+                }
+              ],
+              "name": "ENTJ personality type mentions",
+              "description": "Fires on the MBTI label ENTJ and its plural (entj, entjs) in commentary about that type, as in 'I don't hate ENTJs though'."
+            }
+          ]
+        },
+        {
+          "class_index": 1,
+          "class_name": "1",
+          "label": "Perceiving (P)",
+          "tag": "Perceiving",
+          "tone": "orange",
+          "features": [
+            {
+              "latent_id": 9994,
+              "score": 351.18,
+              "coefficient": 351.18,
+              "top_words": [
+                "give",
+                "you're",
+                "giving",
+                "gotta",
+                "team",
+                "chance",
+                "tldr",
+                "lol",
+                "figured",
+                "offical"
+              ],
+              "highlight": [
+                "give",
+                "you're",
+                "giving",
+                "gotta",
+                "team",
+                "chance",
+                "tldr",
+                "lol",
+                "figured",
+                "offical"
+              ],
+              "examples": [
+                {
+                  "activation": 3.232,
+                  "text": "Gotta give the other team a chance"
+                },
+                {
+                  "activation": 2.777,
+                  "text": "lol I figured to give the offical seal"
+                },
+                {
+                  "activation": 2.57,
+                  "text": "Thank you and Ill give the novel a shot"
+                },
+                {
+                  "activation": 2.555,
+                  "text": "You're giving the writers way too much credit"
+                },
+                {
+                  "activation": 2.555,
+                  "text": "You're giving the guy too much importance."
+                },
+                {
+                  "activation": 2.531,
+                  "text": "Why? Kids give the best advice sometimes."
+                }
+              ],
+              "name": "Giving someone or something a chance",
+              "description": "Activates on 'give/giving X a chance/shot/credit' constructions (give, giving, gotta, chance), as in 'Gotta give the other team a chance'."
+            },
+            {
+              "latent_id": 5815,
+              "score": 301.89,
+              "coefficient": 301.89,
+              "top_words": [
+                "procrastination",
+                "procrastinating",
+                "professional",
+                "procrastinate",
+                "master",
+                "keep",
+                "embrassing",
+                "sad",
+                "depressive",
+                "act"
+              ],
+              "highlight": [
+                "procrastination",
+                "procrastinating",
+                "professional",
+                "procrastinate",
+                "master",
+                "keep",
+                "embrassing",
+                "sad",
+                "depressive",
+                "act"
+              ],
+              "examples": [
+                {
+                  "activation": 9.633,
+                  "text": "Procrastination. Sad and depressive procrastination"
+                },
+                {
+                  "activation": 9.578,
+                  "text": "How are you with procrastination?"
+                },
+                {
+                  "activation": 9.297,
+                  "text": "I am procrastinating the act of procrastination. So... winning?"
+                }
+              ],
+              "name": "Procrastination as a topic",
+              "description": "Fires on the word procrastination and its inflections (procrastinating, procrastinate, master), as in 'Procrastination. Sad and depressive procrastination'."
+            },
+            {
+              "latent_id": 891,
+              "score": 294.94,
+              "coefficient": 294.94,
+              "top_words": [
+                "rollercoaster",
+                "roller",
+                "emotional",
+                "coaster",
+                "dat",
+                "lol",
+                "goddamn",
+                "called",
+                "tycoon",
+                "holy"
+              ],
+              "highlight": [
+                "rollercoaster",
+                "roller",
+                "emotional",
+                "coaster",
+                "dat",
+                "lol",
+                "goddamn",
+                "called",
+                "tycoon",
+                "holy"
+              ],
+              "examples": [
+                {
+                  "activation": 9.859,
+                  "text": "That was a goddamn rollercoaster."
+                },
+                {
+                  "activation": 8.148,
+                  "text": "What an emotional rollercoaster 10/10"
+                },
+                {
+                  "activation": 7.852,
+                  "text": "Holy shit that sequence was a rollercoaster!"
+                }
+              ],
+              "name": "Calling something a rollercoaster",
+              "description": "Activates on the metaphor 'rollercoaster' (roller, coaster, emotional) with emphatic interjections, as in 'That was a goddamn rollercoaster'."
+            },
+            {
+              "latent_id": 16029,
+              "score": 294.58,
+              "coefficient": 294.58,
+              "top_words": [
+                "influence",
+                "win",
+                "friends",
+                "people",
+                "pushups",
+                "day",
+                "stated",
+                "humans",
+                "animal",
+                "births"
+              ],
+              "highlight": [
+                "influence",
+                "win",
+                "friends",
+                "people",
+                "pushups",
+                "day",
+                "stated",
+                "humans",
+                "animal",
+                "births"
+              ],
+              "examples": [
+                {
+                  "activation": 3.965,
+                  "text": "The influence from doing 10 pushups a day"
+                },
+                {
+                  "activation": 3.674,
+                  "text": "I just stated the influence humans have on animal births."
+                },
+                {
+                  "activation": 3.498,
+                  "text": "How to win friends and influence people"
+                },
+                {
+                  "activation": 3.428,
+                  "text": "I would rather influence the job market"
+                },
+                {
+                  "activation": 3.367,
+                  "text": "Why is Canada different then? American influence?"
+                },
+                {
+                  "activation": 3.127,
+                  "text": "I never said I was a good influence ;D"
+                }
+              ],
+              "name": "The noun and verb 'influence'",
+              "description": "Fires on 'influence' across senses (influence, friends, people), as in 'How to win friends and influence people' and 'American influence?'."
+            },
+            {
+              "latent_id": 12230,
+              "score": 287.48,
+              "coefficient": 287.48,
+              "top_words": [
+                "incel",
+                "found",
+                "question",
+                "fear",
+                "inbreeding",
+                "opinion",
+                "break",
+                "game",
+                "editor",
+                "particular"
+              ],
+              "highlight": [
+                "incel",
+                "found",
+                "question",
+                "fear",
+                "inbreeding",
+                "opinion",
+                "break",
+                "game",
+                "editor",
+                "particular"
+              ],
+              "examples": [
+                {
+                  "activation": 5.191,
+                  "text": "break out the in game editor"
+                }
+              ],
+              "name": "Words and phrases with 'in-' fragments",
+              "description": "Activates on the 'in' string in tokens like incel, inbreeding and 'in game editor', as in 'break out the in game editor'."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

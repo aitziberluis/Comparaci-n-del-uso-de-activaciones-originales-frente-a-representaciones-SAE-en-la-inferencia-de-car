@@ -1,0 +1,42 @@
+[
+  {
+    "key": "age|3|10255",
+    "name": "Aphoristic quotes credited to a deity",
+    "description": "Fires on epigrammatic quotations attributed to a god or 'God Entity', such as the 'do things right so people won't be sure you've done anything' aphorism."
+  },
+  {
+    "key": "intuitive|1|8957",
+    "name": "CSS and visual styling terminology",
+    "description": "Activates on web-styling vocabulary — CSS, cascading style sheets — and the 'style/stylish/aesthetic' word family."
+  },
+  {
+    "key": "thinking|0|4154",
+    "name": "The ideal and idealism word family",
+    "description": "Fires on 'ideal', 'ideally', 'idealism' and 'idealists', usually in political or philosophical remarks."
+  },
+  {
+    "key": "thinking|0|13739",
+    "name": "Madden Ultimate Team builder links",
+    "description": "Activates on Muthead 'team-builder' URLs and roster/design talk for the Madden Ultimate Team game."
+  },
+  {
+    "key": "thinking|0|14796",
+    "name": "mixed or low-signal feature",
+    "description": "Tokens and examples span unrelated topics — earthquakes, school, skincare — with no shared linguistic theme."
+  },
+  {
+    "key": "thinking|0|6130",
+    "name": "Makeup highlighters and reseller prices",
+    "description": "Fires on cosmetics names (e.g. NARS Albatross) and reseller stock/price chatter such as 'raised prices' and 'kilos'."
+  },
+  {
+    "key": "thinking|0|6334",
+    "name": "The word 'adult' across varied contexts",
+    "description": "Activates on the token 'adult' in unrelated phrases — adult cakes, adult babies, AdultSwim."
+  },
+  {
+    "key": "thinking|1|4189",
+    "name": "Love of knowledge and lifelong learning",
+    "description": "Fires on reflections about knowledge, learning and intellectual humility, e.g. 'the more I learn, the more I realize how much I don't know'."
+  }
+]

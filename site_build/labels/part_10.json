@@ -1,0 +1,52 @@
+[
+  {
+    "key": "age|0|8847",
+    "name": "High-school AP courses and grade levels",
+    "description": "Fires on tokens like senior, junior, highschool, AP English and course listings, plus mentions of school year, prom, and not owning a car."
+  },
+  {
+    "key": "age|0|10794",
+    "name": "First-person accounts of school and learning",
+    "description": "Fires on first-person contractions (I'm, I've, don't) in long personal narratives about classes, writing assignments, learning skills, and friends."
+  },
+  {
+    "key": "age|0|4108",
+    "name": "School-related and YouTube channel references",
+    "description": "Fires on the token school (and variants like scho, scholes) together with mentions of YouTube channels and life."
+  },
+  {
+    "key": "age|0|13707",
+    "name": "Legal age limits for alcohol, tobacco, consent",
+    "description": "Fires on legal, age, consent, alcohol, beer, older near statements about minimum ages for drinking, smoking, tattoos, M-rated games, and age of consent."
+  },
+  {
+    "key": "age|0|784",
+    "name": "Reflective remarks on life, conflict, and entertainment",
+    "description": "Fires on life, playing, video game alongside reflective passages about violent conflict as entertainment and on questions about trauma and mental health."
+  },
+  {
+    "key": "age|1|1739",
+    "name": "Emergency, crisis, and management vocabulary",
+    "description": "Fires on emergency, crisis, averted, management near references to emergency services and graduating to work in an emergency field."
+  },
+  {
+    "key": "age|1|12847",
+    "name": "Concessive 'given' clauses",
+    "description": "Fires on the word given used to introduce a concession or qualifier, as in 'given the length' or 'given that there is past precedent'."
+  },
+  {
+    "key": "age|1|497",
+    "name": "Sarcastic argumentative second-person rebuttals",
+    "description": "Fires on maybe, you're, making fun in long second-person rebuttals that mock an interlocutor's assumptions and personal bubble."
+  },
+  {
+    "key": "age|1|6853",
+    "name": "Directional phrase 'towards the end'",
+    "description": "Fires strongly on the preposition towards, especially in the recurring phrase 'towards the end' and similar directional or trajectory expressions."
+  },
+  {
+    "key": "age|1|15727",
+    "name": "mixed or low-signal feature",
+    "description": "Top words (happened, poor, poisoned, head, shoulders, bill) and examples span unrelated topics with no coherent shared linguistic theme."
+  }
+]

@@ -1,0 +1,52 @@
+[
+  {
+    "key": "perceiving|0|15703",
+    "name": "Onion and 'onto-' word fragments",
+    "description": "Fires on 'onion'/'onions' and the 'onto-' string in 'ontology', as in 'Gotta love an ontology debate', plus 'man, holy' interjections."
+  },
+  {
+    "key": "perceiving|0|13689",
+    "name": "Words with the 'in-fa/in-fo/in-flu' prefix",
+    "description": "Activates on 'inf-' words like infamous, infographics, infrared, influencer, as in 'Check out Infamous and/or Infamous 2!'."
+  },
+  {
+    "key": "perceiving|0|12340",
+    "name": "Efficiency and inefficiency vocabulary",
+    "description": "Fires on tokens about efficiency, efficient and inefficient (often tied to 'German'), as in 'Because not everyone cares about efficiency'."
+  },
+  {
+    "key": "perceiving|0|2052",
+    "name": "Getting to the point directly",
+    "description": "Activates on 'point' and directional phrasing (come, proceed, towards), as in 'I like to get to the point'."
+  },
+  {
+    "key": "perceiving|0|828",
+    "name": "ENTJ personality type mentions",
+    "description": "Fires on the MBTI label ENTJ and its plural (entj, entjs) in commentary about that type, as in 'I don't hate ENTJs though'."
+  },
+  {
+    "key": "perceiving|1|9994",
+    "name": "Giving someone or something a chance",
+    "description": "Activates on 'give/giving X a chance/shot/credit' constructions (give, giving, gotta, chance), as in 'Gotta give the other team a chance'."
+  },
+  {
+    "key": "perceiving|1|5815",
+    "name": "Procrastination as a topic",
+    "description": "Fires on the word procrastination and its inflections (procrastinating, procrastinate, master), as in 'Procrastination. Sad and depressive procrastination'."
+  },
+  {
+    "key": "perceiving|1|891",
+    "name": "Calling something a rollercoaster",
+    "description": "Activates on the metaphor 'rollercoaster' (roller, coaster, emotional) with emphatic interjections, as in 'That was a goddamn rollercoaster'."
+  },
+  {
+    "key": "perceiving|1|16029",
+    "name": "The noun and verb 'influence'",
+    "description": "Fires on 'influence' across senses (influence, friends, people), as in 'How to win friends and influence people' and 'American influence?'."
+  },
+  {
+    "key": "perceiving|1|12230",
+    "name": "Words and phrases with 'in-' fragments",
+    "description": "Activates on the 'in' string in tokens like incel, inbreeding and 'in game editor', as in 'break out the in game editor'."
+  }
+]
